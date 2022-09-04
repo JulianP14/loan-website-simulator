@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <script src="./jsfiles/variables.js" defer></script>
+    <script src="./jsfiles/lending.js" defer></script>
+    <script src="./jsfiles/backend.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    
+    <link rel="stylesheet" href="./cssfiles/lending.css">
+    <title>Document</title>
+</head>
+<body id="body"> 
+    <li><a href="./solicitud.html">API Prueba</a></li>
+    <!-- <head>
+        <nav>
+            <ul>
+                <li>Aca</li>
+                <li>Nav</li>
+            </ul>
+        </nav>
+    </head> -->
+    <div id="boxBody">
+        <div id="tituloDiv">
+            <h1 id="titulo">Servicio de Prestamos</h1>
+        </div>
+        <div id="formDiv">
+            <form action="" id="form">
+                <p class="inputTexto">Ingrese su Nombre</p>
+                <input type="text" name="name" id="inputName"  class="inputForm">
+                <p class="inputTexto">Ingrese su Apellido</p>
+                <input type="text" name="lastName" id="inputLastName" class="inputForm">
+                <p class="inputTexto">Ingrese su Email</p>
+                <input type="email" name="email" id="inputEmail" class="inputForm">
+                <p class="inputTexto">Ingrese el monto y seleccione cuotas</p>
+                    <input type="number" min="0" name="amount" id="inputAmount" class="inputForm">
+                    <select name="select" id="select">
+                        <option class="inputCuotas" value="1">1</option>
+                        <option class="inputCuotas" value="2">2</option>
+                        <option class="inputCuotas" value="3">3</option>
+                        <option class="inputCuotas" value="4">4</option>
+                        <option class="inputCuotas" value="5">5</option>
+                        <option class="inputCuotas" value="6">6</option>
+                        <option class="inputCuotas" value="7">7</option>
+                        <option class="inputCuotas" value="8">8</option>
+                        <option class="inputCuotas" value="9">9</option>
+                        <option class="inputCuotas" value="10">10</option>
+                        <option class="inputCuotas" value="11">11</option>
+                        <option class="inputCuotas" value="12">12</option>
+                        <option class="inputCuotas" value="24">24</option>
+                    </select>
+                
+                <input type="submit" name="submit" value="Simular" id="inputSubmit" class="inputForm">
+            </form>
+        </div>
+        <div id="mostrarResultado">
+            
+        </div>
+        
+        <div id="showDefaultLoansDiv">
+            <div id="showDefaultLoansHTML">
+                
+            </div>
+            <input type="submit" name="" value="Ver Prestamos Mas Comunes" id="showDefaultLoans" class="showDefaultLoans">
+        </div>
+        
+        <div id="threeInputsDiv">
+            <input type="submit" value="Solicitar" id="firstInput" class="threeInputs"> 
+            <input type="submit" value="Solicitar" id="secondInput" class="threeInputs"> 
+            <input type="submit" value="Solicitar" id="thirdInput" class="threeInputs"> 
+        </div>  
+            
+        <div id="hideDefaultLoansDiv">
+            <input type="submit" name="" value="Ocultar" id="hideDefaultLoans" class="showDefaultLoans">
+        </div>
+        
+        <h2>Ultimos Tres Prestamos Solicitados</h2>
+        <div id="threeLoans">
+            <input type="submit" value="Ver Loans Pedidos" name="" id="loansSubmit">
+        </div>
+    </div>
+    </body>
+</html>
