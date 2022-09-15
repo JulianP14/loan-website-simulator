@@ -48,12 +48,33 @@
     })
 
 // This will show us user's employment status as well as his bank
-    dropDownItems.forEach(dropDownItems => {
+    /* dropDownItems.forEach(dropDownItems => {
         dropDownItems.addEventListener("click", (e) => {
             e.preventDefault()
-            console.log(dropDownItems.innerText)
+            let valorA = dropDownItems.innerText
+                console.log(valorA)
+            let valorB = dropDownItems.innerText
+                console.log(valorB)
+        })
+    }) */
+    
+// Trying to imrpove the functionality from above
+    var bankEntity = 
+    inputBank.forEach(inputBank => {
+        inputBank.addEventListener("click", (e) => {
+            e.preventDefault()
+                bankEntity = inputBank.innerText
         })
     })
+
+    var employmentStatus =
+    inputEmployment.forEach(inputEmployment => {
+        inputEmployment.addEventListener("click", (e) => {
+            e.preventDefault()
+                employmentStatus = inputEmployment.innerText
+        })
+    })
+    
 
 /* function stups(){
     var values = [];
@@ -122,26 +143,43 @@
     }
 
     function addUser () {
-        allUsers.push(new Users (inputName.value, inputLastName.value, inputEmail.value, inputAmount.value))
+        allUsers.push(new Users (inputName.value, inputLastName.value, employmentStatus, inputDni, inputEmail.value, inputPhone.value, inputAmount.value, inputCbu.value, bankEntity))
         localStorage.setItem("Usuario", JSON.stringify(allUsers))
     }
 
-//Show Loan Data an insert it into the DOM
-    function mostrarData () {
-        
-        mostrarResultado.innerHTML = 
-        `
-        <div>
-            <p class = "parrafoResultado">Nombre: ${inputName.value + " " + inputLastName.value}</p>
-        </div>
-        <div>
-            <p class = "parrafoResultado">Ha solicitado un prestamo por: $${inputAmount.value}</p>
-        </div>
-        
-        <div id="botonResultado"> 
-            <input type="submit" name="submit" id="submitResultado" value="Solicitar">
-        </div>
-        `
+//Show Loan Data and insert it into the DOM
+    function mostrarData (e) {
+        if(employmentStatus == undefined || bankEntity == undefined) {
+            Swal.fire({
+                title: "Datos Faltantes",
+                text: "Elija su estado laboral y/o entidad bancaria correctamente",
+                icon: "error",
+                confirmButtonText: "Ok"
+            })
+            e.preventDefault()
+        } else {
+            mostrarResultado.innerHTML = 
+            `
+            <div>
+                <p class = "parrafoResultado">Nombre: ${inputName.value + " " + inputLastName.value}</p>
+                <p class = "parrafoResultado">Con DNI: ${inputDni.value}</p>
+            </div>
+            <div>
+                <p class="parrafoResultado">Estado laboral: ${employmentStatus}</p>
+            </div>
+            <div>
+                <p class="parrafoResultado">Entidad Bancaria: ${bankEntity}</p>
+                <p class="parrafoResultado">CBU: ${inputCbu.value}</p>
+            </div>
+            <div>
+                <p class = "parrafoResultado">Ha solicitado un prestamo por: $${inputAmount.value}</p>
+            </div>
+            
+            <div id="botonResultado"> 
+                <input type="submit" name="submit" id="submitResultado" value="Solicitar">
+            </div>
+            `
+        }
     }
 
 //We get the loans stored in localStorage

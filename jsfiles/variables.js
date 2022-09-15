@@ -7,7 +7,12 @@ const inputEmail = document.getElementById("inputEmail");
 const inputAmount = document.getElementById("inputAmount");
 const inputCbu = document.getElementById("inputCbu")
 const inputPhone = document.getElementById("inputPhone")
+
 const dropDownItems = document.querySelectorAll("a")
+
+
+const inputBank = document.querySelectorAll(".inputBank")
+const inputEmployment = document.querySelectorAll(".inputEmployment")
 
 //Situacion Laboral
     /* const inputEmpleado = document.getElementById("inputEmpleado")
