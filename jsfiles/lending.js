@@ -1,18 +1,12 @@
+
 //First Loan Submit. 
     inputSubmit.addEventListener("click", (event) => {
         event.preventDefault()
-        if(inputName.value == "" || inputLastName.value == "" || inputAmount.value == "") {
+        if(inputName.value == "" || inputLastName.value == "" || inputAmount.value == "" ||inputDob.value == "" || inputDni.value == "" || inputEmail.value == "" || inputCbu.value == "" || inputPhone.value == "" ) {
             Swal.fire({
                 title: "Error",
                 text: "Debes ingresar todos los campos correctamente",
                 icon: "error",
-                confirmButtonText: "Ok"
-            })
-        } if(inputAmount.value < 1000 || inputAmount.value > 1000000) {
-            Swal.fire({
-                titel:"Monto Invalido",
-                text:"Solicite un monto valido. Entre $1.000 y $1.000.000",
-                icon:"error",
                 confirmButtonText: "Ok"
             })
         } else {
@@ -23,36 +17,117 @@
         }
     })
 
+
+//Testing inputs via logs
+
+    inputName.addEventListener("change", ()=> {
+        let userName = inputName.value
+        console.log(userName)
+    })
+    inputLastName.addEventListener("change", ()=> {
+        console.log(inputLastName.value)
+    })
+    inputAmount.addEventListener("change", ()=> {
+        console.log(inputAmount.value)
+    })
+    inputDni.addEventListener("change", ()=> {
+        let dni = inputDni.value
+        console.log(dni)
+    })
+    inputDob.addEventListener("change", ()=> {
+        console.log(inputDob.value)
+    })
+    inputCbu.addEventListener("change", ()=> {
+        console.log(inputCbu.value)
+    })
+    inputEmail.addEventListener("change", ()=> {
+        console.log(inputEmail.value)
+    })
+    inputPhone.addEventListener("change", ()=> {
+        console.log(inputPhone.value)
+    })
+
+// This will show us user's employment status as well as his bank
+    dropDownItems.forEach(dropDownItems => {
+        dropDownItems.addEventListener("click", (e) => {
+            e.preventDefault()
+            console.log(dropDownItems.innerText)
+        })
+    })
+
+/* function stups(){
+    var values = [];
+    as.forEach(function(a, index){
+    values.push(a.getAttribute("value") || '--- no value ---');
+    // OR: values.push(as[index].getAttribute("value"));
+    })
+    document.getElementById("demo").innerHTML = values.join('<br>');
+*/
+
+
+
+//Checking and restablishing inputAmount
+    inputAmount.addEventListener("blur", () => {
+        if(inputAmount.value > 500000){
+            inputAmount.value = 500000
+        }
+        if(inputAmount.value < 1000) {
+            inputAmount.value = 1000
+        }
+    })
+
+//CBU Required Data + Checking variables
+    inputCbu.addEventListener("blur", () => {
+        let inputCbuNum = Number(inputCbu.value)
+            if(typeof inputCbu === "string" || isNaN(inputCbuNum)) {
+                inputCbu.style.border = ".1rem solid red"
+                inputCbu.value = ""
+                inputCbu.placeholder = "Ingrese un CBU correcto"
+            } else {
+                let inputCbuNumToStr = inputCbuNum.toString()
+                if(inputCbuNumToStr.length <= "21" || inputCbuNumToStr.length >= "23"){
+                    inputCbu.style.border = ".1rem solid red"
+                    inputCbu.value = ""
+                    inputCbu.placeholder = "Ingrese un CBU correcto"
+                } else {
+                    inputCbu.style.border = ''
+                }
+            }
+    })
+
+
 //Erase inputs after submit
     function clearInputs () {
         inputName.value = ""
         inputLastName.value = ""
-        inputAmount.value = ""
+        inputDni.value = ""
+        inputDob.value = ""
+        inputCbu.value = ""
         inputEmail.value = ""
     }
 
 //Add user data to an [] of {} with a constructor {}
     class Users {
-        constructor (name, lastName, email, amount, installments){
+        constructor (name, lastName, employment, dni, email, phone, amount, cbu, bank){
         this.name = name,
         this.lastName = lastName,
+        this.employment = employment,
+        this.dni = dni,
         this.email = email,
+        this.phone = phone,
         this.amount = amount,
-        this.installments = installments
+        this.cbu = cbu,
+        this.bank = bank
         }
     }
 
     function addUser () {
-        allUsers.push(new Users (inputName.value, inputLastName.value, inputEmail.value, inputAmount.value, inputCuotas.value))
+        allUsers.push(new Users (inputName.value, inputLastName.value, inputEmail.value, inputAmount.value))
         localStorage.setItem("Usuario", JSON.stringify(allUsers))
     }
 
 //Show Loan Data an insert it into the DOM
     function mostrarData () {
-        if(inputCuotas.value > 12 && inputCuotas.value <= 24){
-            interes = 3.4
-            meses = 2.4
-        }
         
         mostrarResultado.innerHTML = 
         `
@@ -62,23 +137,12 @@
         <div>
             <p class = "parrafoResultado">Ha solicitado un prestamo por: $${inputAmount.value}</p>
         </div>
-        <div>
-            <p class = "parrafoResultado">A pagar en ${inputCuotas.value} cuotas de $${Math.round((inputAmount.value / inputCuotas.value) * (interes) / meses)}</p>
-        </div>
+        
         <div id="botonResultado"> 
             <input type="submit" name="submit" id="submitResultado" value="Solicitar">
         </div>
         `
     }
-
-/* Quizas se pueda implementar con promesas
-if(submitResultado){
-    submitResultado.addEventListener("click", () => {
-        console.log("AAAAAAAAA")
-    })
-} 
-
-*/
 
 //We get the loans stored in localStorage
     loansSubmit.addEventListener ("click", () => {

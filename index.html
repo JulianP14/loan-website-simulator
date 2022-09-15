@@ -27,7 +27,7 @@
             <form id="formStructure">
                 <div id="formStructureHead">
                     <div id="formStructureInputDiv">
-                        <input type="numer" name="" id="inputAmount" class="formStructureHeadInput" value="$500.000">
+                        <input type="numer" name="" id="inputAmount" class="formStructureHeadInput"  placeholder="$500.000">
                     </div>    
                     <div class="formStructureDiv">
                         <h2 id="formStructureH2" class="formHeaders">Encontra tu prestamo ideal</h2>
@@ -46,11 +46,11 @@
                 </div>
                 <div class="formStructureTwoinputsVariation">
                     <div class="mb-3">
-                        <input type="mask" inputmode="numeric" class="form-control" id="" aria-describedby="emailHelp"
+                        <input type="mask" inputmode="numeric" class="form-control" id="inputDni" aria-describedby="emailHelp"
                             placeholder="DNI">
                     </div>
                     <div class="mb-3 formStructureTwoinputsDateOfBirth">
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp"
+                        <input type="text" class="form-control" id="inputDob" aria-describedby="emailHelp"
                             placeholder="Fecha de Nacimiento">
                         <label for="" id="fechaNacimiento">DD/MM/AAAA</label>
                     </div>
@@ -59,14 +59,14 @@
                     <div class="mb-3 dropdownModifiers">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                                aria-expanded="false" id="inputbuttonSelect" >
                                 Situacion Laboral   
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Empleado</a></li>
-                                <li><a class="dropdown-item" href="#">Desempleado</a></li>
-                                <li><a class="dropdown-item" href="#">Autónomo</a></li>
-                                <li><a class="dropdown-item" href="#">Jubilado</a></li>
+                                <li><a class="dropdown-item" href="#" id="inputEmpleado" value="Empleado">Empleado</a></li>
+                                <li><a class="dropdown-item" href="#" id="inputDesempleado">Desempleado</a></li>
+                                <li><a class="dropdown-item" href="#" id="inputAutonomo">Autónomo</a></li>
+                                <li><a class="dropdown-item" href="#" id="inputJubilado">Jubilado</a></li>
                             </ul>
                         </div>
                     </div>
@@ -77,21 +77,30 @@
                                 Entidad Bancaria   
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoGalicia">Banco Galicia</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoSantander">Banco Santander</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoICBC">ICBC</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoHSBC">HSBC</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoItau">Banco Itau</a></li>
+                                <li class=""><a class="dropdown-item inputBank" href="#" id="inputBancoNacion">Banco Nación</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoProvincia">Banco Provincia</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoCiudad">Banco Ciudad</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoOtros">Otros Bancos</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="formEmailPhone">
                     <div class="mb-3 formEmailPhoneInputs">
+                        <input type="mask" inputmode="numeric" class="form-control" id="inputCbu" aria-describedby="emailHelp" maxlength="22"
+                            placeholder="Ingrese su CBU">
+                    </div>
+                    <div class="mb-3 formEmailPhoneInputs">
                         <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp"
                             placeholder="Email">
                     </div>
                     <div class="mb-3 formEmailPhoneInputs">
-                        <input type="text" class="form-control" id="" aria-describedby="emailHelp"
+                        <input type="text" class="form-control" id="inputPhone" aria-describedby="emailHelp"
                             placeholder="Telefono">
                     </div>
                 </div>
