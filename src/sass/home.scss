@@ -2,6 +2,8 @@
 
 /* RESPONSIVE NAVBAR */
     #navbar{
+        position: sticky;
+        top: 0;
         background: #1f3963;
         display: flex;
         flex-direction: row;
@@ -27,15 +29,16 @@
         background: #1f3963;
         padding: 1rem;
         width: 70%;
-        text-align: left
+        text-align: left;
+        h1{
+            color: #faf4f4
+        }
     };
 
     #container-fluid-div-img{
-        width: 7%;
+        width: 14%;
         padding: 0;
         margin: auto;
-        background-color: #274980;
-        border: .1rem solid #faf4f4;
     }
 
     .nav-item{
@@ -73,26 +76,20 @@
         background-color: #faf4f4;
         padding: 2rem 1rem;
 
-        h1{
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 3rem;
-            width: 35%;
-        }
-
         h2{
             text-align: center;
-            background-color: #274980;
             padding: 1rem;
-            color: #fff;
+            color: #274980;
             text-transform: uppercase;
-            font-size: 1.5rem;
+            font-size: 3rem;
+            font-weight: 650;
         }
 
         p{
-            text-align: justify;
+            text-align: center;
             padding: 0 .5rem;
-            font-size: 1.3rem;
+            font-weight: 450;
+            font-size: 1.5rem;
         }
 
         section{
@@ -218,7 +215,35 @@
 
     footer{
         background-color: #1f3963;
-        padding: 5rem 0;
+        display: flex;
+        padding: 2rem 0;
+        flex-direction: column; 
+        align-items: center;
+        div{
+            display: grid;
+            grid-template-columns: 90% 10%;
+            align-items: center;
+            padding: 0 2rem;
+            h2{
+                color: #faf4f4;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        section{
+            margin: 2rem 0;
+            padding: 0.1rem;
+            background: #faf4f4;
+            width: 85%;
+        }
+    }
+
+    #fD-div{
+        display: flex;
+        p{
+            color: #808080;
+        }
     }
 
 
