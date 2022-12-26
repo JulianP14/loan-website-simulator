@@ -1,0 +1,195 @@
+@media (min-width: 480px) {
+  /* RESPONSIVE NAVBAR */
+  #navbar {
+    background: #1f3963;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #navbar img {
+    width: 100%;
+  }
+  .navbar container-fluid {
+    flex-wrap: wrap;
+  }
+  .navbar-button {
+    background-color: #faf4f4;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap !important;
+    justify-content: center;
+    background: #1f3963;
+    padding: 1rem;
+    width: 70%;
+    text-align: left;
+  }
+  #container-fluid-div-img {
+    width: 7%;
+    padding: 0;
+    margin: auto;
+    background-color: #274980;
+    border: 0.1rem solid #faf4f4;
+  }
+  .nav-item {
+    padding: 0.5rem;
+  }
+  .nav-link {
+    transition: none;
+  }
+  .navBarText {
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 0rem 1rem;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    transition: 0.3s;
+    border-radius: 1.5rem;
+  }
+  .navBarText:hover {
+    background-color: #fff;
+    color: #1f3963 !important;
+  }
+  /* RESPONSIVE BODY */
+  .boxBody {
+    background-color: #faf4f4;
+  }
+  #bB-homeDiv-A {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #faf4f4;
+    padding: 2rem 1rem;
+  }
+  #bB-homeDiv-A h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    width: 35%;
+  }
+  #bB-homeDiv-A h2 {
+    text-align: center;
+    background-color: #274980;
+    padding: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  #bB-homeDiv-A p {
+    text-align: justify;
+    padding: 0 0.5rem;
+    font-size: 1.3rem;
+  }
+  #bB-homeDiv-A section {
+    background-color: #faf4f4;
+    width: 100%;
+  }
+  #bB-homeDiv-A img {
+    width: 100%;
+  }
+  #bB-homeDiv-B {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #bB-homeDiv-B section h3 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #274980;
+  }
+  #bB-homeDiv-B section img {
+    width: 100%;
+    border: 0.1rem solid #274980;
+    border-radius: 100%;
+    background: #fff;
+    margin: 1.5rem 0 0 0;
+    transition: 0.3s;
+  }
+  #bB-homeDiv-B section img:hover {
+    background-color: #1f3963;
+  }
+  #bB-homeDiv-B p {
+    font-size: 1.5rem;
+    color: #808080;
+    text-align: center;
+    font-weight: 500;
+  }
+  #carouselHome {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .cH-Section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  .cH-Section a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    background: #faf4f4;
+  }
+  .cH-Section a img {
+    width: 100%;
+  }
+  #cH-3 {
+    margin: -2.5rem 0 0 0;
+  }
+  #cH-4 {
+    margin: -2rem 0 0 0;
+  }
+  #bB-homeDiv-C {
+    width: 100%;
+    margin: 1rem 0rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #bB-homeDiv-C img {
+    width: 100%;
+  }
+  #bB-homeDiv-C h3 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #274980;
+    padding: 2rem 0rem;
+  }
+  #bB-homeDiv-C p {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #808080;
+    font-weight: 500;
+  }
+  #bB-homeDiv-C button {
+    font-size: 2rem;
+    width: 45%;
+    text-align: center;
+    margin: 0 0 2rem 2.5rem;
+    transition: 0.3s;
+  }
+  #bB-homeDiv-C button:hover {
+    background-color: #5b5995;
+  }
+  #bB-homeDiv-C a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .bB-hD-sImage-B {
+    width: 7%;
+    margin: 2rem;
+  }
+}
+footer {
+  background-color: #1f3963;
+  padding: 5rem 0;
+}/*# sourceMappingURL=home.css.map */

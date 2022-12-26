@@ -2,36 +2,19 @@
 const inputName = document.getElementById("inputName")
 const inputLastName = document.getElementById("inputLastName");
 const inputDni = document.getElementById("inputDni");
-const inputDob = document.getElementById("inputDob")
+const inputDob = document.getElementById("inputDob");
 const inputEmail = document.getElementById("inputEmail");
 const inputAmount = document.getElementById("inputAmount");
-const inputCbu = document.getElementById("inputCbu")
-const inputPhone = document.getElementById("inputPhone")
+const inputCbu = document.getElementById("inputCbu");
+const inputPhone = document.getElementById("inputPhone");
+const inputCheckBox = document.getElementById("iC-input"); 
 
 const dropDownItems = document.querySelectorAll("a")
 
 
+//Dropdown buttons
 const inputBank = document.querySelectorAll(".inputBank")
 const inputEmployment = document.querySelectorAll(".inputEmployment")
-
-//Situacion Laboral
-    /* const inputEmpleado = document.getElementById("inputEmpleado")
-    const inputDesempleado = document.getElementById("inputDesempleado")
-    const inputAutonomo = document.getElementById("inputAutonomo")
-    const inputJubilado = document.getElementById("inputJubilado") */
-
-//Entidades Bancarias
-    /* const inputBancoGalicia = document.getElementById("inputBancoGalicia")
-    const inputBancoSantander = document.getElementById("inputBancoSantander")
-    const inputBancoICBC = document.getElementById("inputBancoICBC")
-    const inputBancoHSBC = document.getElementById("inputBancoHSBC")
-    const inputBancoItau = document.getElementById("inputBancoItau")
-    const inputBancoNacion = document.getElementById("inputBancoNacion")
-    const inputBancoProvincia = document.getElementById("inputBancoProvincia")
-    const inputBancoCiudad = document.getElementById("inputBancoCiudad")
-    const inputBancoOtros = document.getElementById("inputBancoOtros") */
-
-
 
 //Boton Solicitar
 const inputSubmit = document.getElementById("inputSubmit");
@@ -56,6 +39,8 @@ const threeInputs = document.querySelectorAll(".threeInputs")
 const firstInput = document.getElementById("firstInput")
 const secondInput = document.getElementById("secondInput")
 const thirdInput = document.getElementById("thirdInput")
+
+const showOneOfThreeButtons = document.getElementById("tI-texts");
 
 
 

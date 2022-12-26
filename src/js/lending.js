@@ -1,51 +1,30 @@
 
-//First Loan Submit. 
+/*First Loan Submit. Call several functions:
+    . mostrarData() ==> It prints all of the data that the user wrote and input
+    . addUser()     ==> Add that data to an [] of {} and store it in the local
+        . log(allUsers) ==> Shows all the users in the local
+    . clearInputs() ==> After the user submits, all inputs are deleted
+*/   
+
     inputSubmit.addEventListener("click", (event) => {
-        event.preventDefault()
+        event.preventDefault();
         if(inputName.value == "" || inputLastName.value == "" || inputAmount.value == "" ||inputDob.value == "" || inputDni.value == "" || inputEmail.value == "" || inputCbu.value == "" || inputPhone.value == "" ) {
-            Swal.fire({
+            return Swal.fire({
                 title: "Error",
                 text: "Debes ingresar todos los campos correctamente",
                 icon: "error",
                 confirmButtonText: "Ok"
             })
         } else {
-            mostrarData()
-            addUser()   
-            clearInputs()
-            console.log(allUsers)
-        }
-    })
+            mostrarData();
+            addUser();
+            console.log(allUsers);  
+            setTimeout(() => {
+                clearInputs();
+            }, 1000);
+        };
+    });
 
-
-//Testing inputs via logs
-
-    inputName.addEventListener("change", ()=> {
-        let userName = inputName.value
-        console.log(userName)
-    })
-    inputLastName.addEventListener("change", ()=> {
-        console.log(inputLastName.value)
-    })
-    inputAmount.addEventListener("change", ()=> {
-        console.log(inputAmount.value)
-    })
-    inputDni.addEventListener("change", ()=> {
-        let dni = inputDni.value
-        console.log(dni)
-    })
-    inputDob.addEventListener("change", ()=> {
-        console.log(inputDob.value)
-    })
-    inputCbu.addEventListener("change", ()=> {
-        console.log(inputCbu.value)
-    })
-    inputEmail.addEventListener("change", ()=> {
-        console.log(inputEmail.value)
-    })
-    inputPhone.addEventListener("change", ()=> {
-        console.log(inputPhone.value)
-    })
 
 // This will show us user's employment status as well as his bank
     /* dropDownItems.forEach(dropDownItems => {
@@ -58,8 +37,8 @@
         })
     }) */
     
-// Trying to imrpove the functionality from above
-    var bankEntity = 
+// Trying to improve the functionality from above
+    let bankEntity
     inputBank.forEach(inputBank => {
         inputBank.addEventListener("click", (e) => {
             e.preventDefault()
@@ -67,28 +46,16 @@
         })
     })
 
-    var employmentStatus =
+    let employmentStatus 
     inputEmployment.forEach(inputEmployment => {
         inputEmployment.addEventListener("click", (e) => {
             e.preventDefault()
                 employmentStatus = inputEmployment.innerText
         })
     })
-    
-
-/* function stups(){
-    var values = [];
-    as.forEach(function(a, index){
-    values.push(a.getAttribute("value") || '--- no value ---');
-    // OR: values.push(as[index].getAttribute("value"));
-    })
-    document.getElementById("demo").innerHTML = values.join('<br>');
-*/
-
-
 
 //Checking and restablishing inputAmount
-    inputAmount.addEventListener("blur", () => {
+    inputAmount.addEventListener("change", () => {
         if(inputAmount.value > 500000){
             inputAmount.value = 500000
         }
@@ -97,7 +64,7 @@
         }
     })
 
-//CBU Required Data + Checking variables
+//CBU data required + Checking variables (painting the border of red if cbu is string or isNaN, and if the length is below 22 or above 22)
     inputCbu.addEventListener("blur", () => {
         let inputCbuNum = Number(inputCbu.value)
             if(typeof inputCbu === "string" || isNaN(inputCbuNum)) {
@@ -116,18 +83,18 @@
             }
     })
 
-
-//Erase inputs after submit
-    function clearInputs () {
-        inputName.value = ""
-        inputLastName.value = ""
-        inputDni.value = ""
-        inputDob.value = ""
-        inputCbu.value = ""
-        inputEmail.value = ""
+//Erase inputs after submit 
+    const clearInputs = () => {
+        inputName.value = "";
+        inputLastName.value = "";
+        inputDni.value = "";
+        inputDob.value = "";
+        inputCbu.value = "";
+        inputEmail.value = "";
+        inputPhone.value = "";
     }
 
-//Add user data to an [] of {} with a constructor {}
+//Add user data to an [] of {} with a constructor {} and store it in localStorage
     class Users {
         constructor (name, lastName, employment, dni, email, phone, amount, cbu, bank){
         this.name = name,
@@ -139,26 +106,43 @@
         this.amount = amount,
         this.cbu = cbu,
         this.bank = bank
-        }
-    }
-
-    function addUser () {
+        };
+    };
+    const addUser = () => {
         allUsers.push(new Users (inputName.value, inputLastName.value, employmentStatus, inputDni, inputEmail.value, inputPhone.value, inputAmount.value, inputCbu.value, bankEntity))
         localStorage.setItem("Usuario", JSON.stringify(allUsers))
-    }
+    };
 
-//Show Loan Data and insert it into the DOM
-    function mostrarData (e) {
+//Check the two dropdown buttons and declare the f() that will show us the result in the DOM
+    const mostrarData = (e) => {
         if(employmentStatus == undefined || bankEntity == undefined) {
             Swal.fire({
                 title: "Datos Faltantes",
                 text: "Elija su estado laboral y/o entidad bancaria correctamente",
                 icon: "error",
                 confirmButtonText: "Ok"
-            })
-            e.preventDefault()
+            });
+            e.preventDefault();
         } else {
-            mostrarResultado.innerHTML = 
+            setTimeout(() => {
+                Swal.fire({
+                    title: "Titulo",
+                    text: "MESSAGE",
+                    html: 
+                    `
+                        El sr/sra: ${inputName.value} ${inputLastName.value} <br>
+                        Con DNI: ${inputDni.value} 
+                        <br>
+                        Solicita un prestamo por: $${inputAmount.value}
+                        <br>
+                        A depositar en el banco ${bankEntity}
+                    `,
+                    icon: "info",
+                    button: "Confirmar"
+                })
+            },1000)
+            setTimeout(() => {
+                mostrarResultado.innerHTML = 
             `
             <div>
                 <p class = "parrafoResultado">Nombre: ${inputName.value + " " + inputLastName.value}</p>
@@ -179,47 +163,51 @@
                 <input type="submit" name="submit" id="submitResultado" value="Solicitar">
             </div>
             `
-        }
-    }
+            
+            }, 1000);
+            
+        };
+    };
 
 //We get the loans stored in localStorage
     loansSubmit.addEventListener ("click", () => {
-        showLoans()
-    })
+        showLoans();
+    });
+        const showLoans = () => {
+            let mostrar = JSON.parse(localStorage.getItem("Usuario"));
+            console.log(mostrar);
+        };
 
-        function showLoans () {
-            let mostrar = JSON.parse(localStorage.getItem("Usuario"))
-            console.log(mostrar)
-        }
-
-// Show the default loans and make it possible to the user to select one and many functions that help the web's display
-    function hideButtons1 () { //hide "show default loans" button
-        showDefaultLoans.style.display = "none"
-        hideDefaultLoans.style.display = "flex"
-    }
-
-    function hideButtons2 () { //show "show default loans" button
-        hideDefaultLoans.style.display = "none"
-        showDefaultLoans.style.display = "flex"
-    }
-    function hideContent () { //if you click "ocultar" it will show the f() "hideButtons2" and "hideThreeInputs" that will hide the three default loans
+// Show the default loans and make it possible to the user to select one and many functions that help the web's display. Hides "Show Default Loans" button
+    const hideButtons1 = () => {
+        showDefaultLoans.style.display = "none";
+        hideDefaultLoans.style.display = "flex";
+    };
+    // Shows "Show Default Loans" button
+    const hideButtons2 = () => { 
+        hideDefaultLoans.style.display = "none";
+        showDefaultLoans.style.display = "flex";
+    };
+    // If you click "ocultar" it will trigger the f() "hideButtons2" and "hideThreeInputs" that will hide the three default loans
+    const hideContent = () => { 
         hideDefaultLoans.addEventListener("click", () => {
-            showDefaultLoansHTML.innerHTML = ``
-            hideButtons2()
-            hideThreeInputs()
-        })
+            showDefaultLoansHTML.innerHTML = ``;
+            hideButtons2();
+            hideThreeInputs();
+        });
     }
-
+    //Shouws the three default loans buttons
     function showThreeInputs () {
-        threeInputsDiv.style.display = "flex"
-    }
-
+        threeInputsDiv.style.display = "flex";
+    };
+    //Hides the three default loans buttons
     function hideThreeInputs () {
-        threeInputsDiv.style.display = "none"
-    }
+        threeInputsDiv.style.display = "none";
+    };
 
+    // Access the "backend.js" to show the three {} of the defaultLoans []. Triggers "hideContent()" amd ""
     showDefaultLoans.addEventListener("click", () => {
-        hideButtons1()
+        hideButtons1();
         showDefaultLoansHTML.innerHTML = 
         `
         <h2>Prestamos preferidos por nuestros clientes </h2>
@@ -262,10 +250,12 @@
                 </div>     
             </section>
         `
-        hideContent()
-        showThreeInputs()
-    })
+        hideContent();
+        showThreeInputs();
+    });
 
+
+//Tests the buttons from each default loan
     threeInputs.forEach(threeInputs => {
         threeInputs.addEventListener("click", (/* redirectFunction */) => {
             console.log("prueba")
@@ -276,6 +266,7 @@
         })
     })
 
+//Erases all the content inside showDefaultLoansHTML div
     function hideContentHTML () {
         showDefaultLoansHTML.innerHTML = ``
     }
@@ -283,20 +274,30 @@
 
     }
 
+
+/* When the user clicks one of the three default loans buttons:
+        . Triggers "hideContentHTML()" => A function that hides the defaultLoans
+        . Triggers "hideButtons2()" => A function that hides the "ocultar" button
+        . Triggers "hideThreeInputs()" => A function that hides the three "solicitar" buttons
+
+        . I'D LIKE THIS TO BE ADDED TO THE CLASS USER. SO IM GONNA NEED TO DO SOME THINGS
+            . DELETE THE innerHTML 
+            . VALIDATE ALL THE USERS DATA
+            . PUSH IT TO THE CLASS
+
+*/
     firstInput.addEventListener("click", () => {
         console.log("Hola")
         Swal.fire({
             title: "Confirmacion",
             text:`"Solicita el prestamo de ${defaultLoans[0].amount}?"`,
             icon: "success",
-            confirmButtonText: "Dale"
         }).then(setTimeout(() => {
             hideContentHTML()
-            hideContent() 
             hideButtons2()
             hideThreeInputs()
         }, 1000)).then(setTimeout(() => {
-            firstInput.innerHTML = `
+            showOneOfThreeButtons.innerHTML = `
             <div>
                     <h3>Prestamo 1</h3>
                         <p>
@@ -321,10 +322,24 @@
             icon: "success",
         }).then(setTimeout(() => {
             hideContentHTML()
-            hideContent() 
             hideButtons2()
             hideThreeInputs()
-        }, 1000))
+        }, 1000)).then(setTimeout(() => {
+            showOneOfThreeButtons.innerHTML = `
+            <div>
+                    <h3>Prestamo 1</h3>
+                        <p>
+                            Monto: ${defaultLoans[1].amount}
+                        </p>
+                        <p>
+                            Cuotas: ${defaultLoans[1].installments}
+                        </p>
+                        <p>
+                            Monto x Cuota: ${defaultLoans[1].installmentsValue}
+                        </p>
+                </div>
+            `
+        }, 2500))
     })
 
     thirdInput.addEventListener("click", () => {
@@ -335,10 +350,24 @@
             icon: "success",
         }).then(setTimeout(() => {
             hideContentHTML()
-            hideContent() 
             hideButtons2()
             hideThreeInputs()
-        }, 1000))
+        }, 1000)).then(setTimeout(() => {
+            showOneOfThreeButtons.innerHTML = `
+            <div>
+                    <h3>Prestamo 1</h3>
+                        <p>
+                            Monto: ${defaultLoans[2].amount}
+                        </p>
+                        <p>
+                            Cuotas: ${defaultLoans[2].installments}
+                        </p>
+                        <p>
+                            Monto x Cuota: ${defaultLoans[2].installmentsValue}
+                        </p>
+                </div>
+            `
+        }, 2500))
     })
 
 

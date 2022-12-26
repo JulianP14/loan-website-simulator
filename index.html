@@ -5,29 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./jsfiles/variables.js" defer></script>
-    <script src="./jsfiles/lending.js" defer></script>
-    <script src="./jsfiles/backend.js" defer></script>
+    
+    <script src="./src/js/variables.js" defer></script>
+    <script src="./src/js/lending.js" defer></script>
+    <script src="./src/js/backend.js" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script> -->
     <script src="./jsbt/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="./cssbt/bootstrap.min.css">
-    <link rel="stylesheet" href="./cssfiles/lending.css">
+    <link rel="stylesheet" href="./public/css/lending.css">
+
     <title>Document</title>
 </head>
 
 <body id="body">
-    <li><a href="./solicitud.html">API Prueba</a></li>
+    <nav id="bodyNav">
+        <ul id="bodyUl">
+            <li class="bU-li"> <a class="bU-lA" href="./public/html/home.html">Home</a></li>
+            <li class="bU-li"> <a class="bU-lA" href="">Loan Simulator</a></li>
+            <li class="bU-li"> <a class="bU-lA" href="./public/html/aboutUs.html">About Us</a></li>
+            <li class="bU-li"> <a class="bU-lA" href="./public/html/contact.html">Contact</a></li>
+        </ul>
+    </nav>
     <div id="boxBody">
-        <div id="tituloDiv">
-            <h1 id="titulo">Servicio de Prestamos</h1>
-        </div>
-
         <div id="formStructureDIV">
             <form id="formStructure">
                 <div id="formStructureHead">
                     <div id="formStructureInputDiv">
-                        <input type="numer" name="" id="inputAmount" class="formStructureHeadInput"  placeholder="$500.000">
+                        <input type="number" name="" id="inputAmount" class="formStructureHeadInput inputColor"  placeholder="$500.000">
                     </div>    
                     <div class="formStructureDiv">
                         <h2 id="formStructureH2" class="formHeaders">Encontra tu prestamo ideal</h2>
@@ -36,21 +42,21 @@
                 </div>
                 <div class="formStructureTwoinputs">
                     <div class="mb-3 divclass">
-                        <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp"
+                        <input type="text" class="form-control inputColor" id="inputName" aria-describedby="emailHelp"
                             placeholder="Nombre(s)">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="inputLastName" aria-describedby="emailHelp"
+                        <input type="text" class="form-control inputColor" id="inputLastName" aria-describedby="emailHelp"
                             placeholder="Apellido(s)">
                     </div>
                 </div>
                 <div class="formStructureTwoinputsVariation">
                     <div class="mb-3">
-                        <input type="mask" inputmode="numeric" class="form-control" id="inputDni" aria-describedby="emailHelp"
+                        <input type="mask" inputmode="numeric" class="form-control inputColor" id="inputDni" aria-describedby="emailHelp"
                             placeholder="DNI">
                     </div>
                     <div class="mb-3 formStructureTwoinputsDateOfBirth">
-                        <input type="text" class="form-control" id="inputDob" aria-describedby="emailHelp"
+                        <input type="text" class="form-control inputColor" id="inputDob" aria-describedby="emailHelp"
                             placeholder="Fecha de Nacimiento">
                         <label for="" id="fechaNacimiento">DD/MM/AAAA</label>
                     </div>
@@ -59,7 +65,7 @@
                     <div class="mb-3 dropdownModifiers">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="inputbuttonSelect" >
+                                aria-expanded="false" id="in " >
                                 Situacion Laboral   
                             </button>
                             <ul class="dropdown-menu">
@@ -92,17 +98,21 @@
                 </div>
                 <div class="formEmailPhone">
                     <div class="mb-3 formEmailPhoneInputs">
-                        <input type="mask" inputmode="numeric" class="form-control" id="inputCbu" aria-describedby="emailHelp" maxlength="22"
+                        <input type="mask" inputmode="numeric" class="form-control inputColor" id="inputCbu" aria-describedby="emailHelp" maxlength="22"
                             placeholder="Ingrese su CBU">
                     </div>
                     <div class="mb-3 formEmailPhoneInputs">
-                        <input type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                        <input type="text" class="form-control inputColor" id="inputEmail" aria-describedby="emailHelp"
                             placeholder="Email">
                     </div>
                     <div class="mb-3 formEmailPhoneInputs">
-                        <input type="text" class="form-control" id="inputPhone" aria-describedby="emailHelp"
+                        <input type="text" class="form-control inputColor" id="inputPhone" aria-describedby="emailHelp"
                             placeholder="Telefono">
                     </div>
+                </div>
+                <div id="inputCheckBox">
+                    <input type="checkbox" id="iC-input" class="inputColor">
+                    <label for="" id="iC-label">Acepto los terminos y politicas de uso</label>
                 </div>
                 <div id="inputSubmitDiv">
                     <button type="submit" class="btn btn-primary" id="inputSubmit">SOLICITAR</button>
@@ -118,18 +128,21 @@
             <div id="showDefaultLoansHTML">
 
             </div>
-            <input type="submit" name="" value="Ver Prestamos Mas Comunes" id="showDefaultLoans"
-                class="showDefaultLoans btn btn-primary">
+            <input type="submit" name="" value="Ver Prestamos Mas Comunes" id="showDefaultLoans" class="showDefaultLoans btn btn-primary">
         </div>
 
         <div id="threeInputsDiv">
-            <input type="submit" value="Solicitar" id="firstInput" class="threeInputs">
-            <input type="submit" value="Solicitar" id="secondInput" class="threeInputs">
-            <input type="submit" value="Solicitar" id="thirdInput" class="threeInputs">
+            <input type="submit" value="Solicitar" id="firstInput" class="threeInputs btn btn-primary">
+            <input type="submit" value="Solicitar" id="secondInput" class="threeInputs btn btn-primary">
+            <input type="submit" value="Solicitar" id="thirdInput" class="threeInputs btn btn-primary">
         </div>
-
+        
         <div id="hideDefaultLoansDiv">
             <input type="submit" name="" value="Ocultar" id="hideDefaultLoans" class="showDefaultLoans btn btn-primary">
+        </div>
+        
+        <div id="tI-texts">
+
         </div>
 
         <h2>Ultimos Tres Prestamos Solicitados</h2>
