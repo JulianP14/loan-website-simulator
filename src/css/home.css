@@ -7,7 +7,6 @@
     background: #1f3963;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
   }
   #navbar img {
     width: 100%;
@@ -87,6 +86,27 @@
   }
   #bB-homeDiv-A img {
     width: 100%;
+  }
+  .bB-hD-sImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../src/assets/imgs/lending8.jpg");
+    padding: 10rem;
+  }
+  .bB-hD-sImage p, .bB-hD-sImage h3 {
+    color: #fff;
+    text-align: center;
+  }
+  .bB-hD-sImage button {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    background-color: #fff;
+    color: #1f3963;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
   }
   #bB-homeDiv-B {
     display: flex;
@@ -169,19 +189,22 @@
     color: #808080;
     font-weight: 500;
   }
-  #bB-homeDiv-C button {
-    font-size: 2rem;
-    width: 45%;
-    text-align: center;
-    margin: 0 0 2rem 2.5rem;
-    transition: 0.3s;
-  }
   #bB-homeDiv-C button:hover {
     background-color: #5b5995;
   }
   #bB-homeDiv-C a {
     text-decoration: none;
     color: #fff;
+  }
+  #btn2-480-hD-C {
+    font-size: 2rem;
+    width: 45%;
+    text-align: center;
+    margin: 0 0 2rem 2.5rem;
+    transition: 0.3s;
+  }
+  #btn1-480-hD-C {
+    display: none;
   }
   .bB-hD-sImage-B {
     width: 7%;
@@ -219,4 +242,86 @@ footer section {
 }
 #fD-div p {
   color: #808080;
+}
+
+@media (min-width: 768px) {
+  #navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #1f3963;
+    display: flex;
+    flex-direction: row;
+  }
+  #navbar img {
+    width: 75%;
+  }
+  #bB-homeDiv-A p {
+    font-size: 1.7rem;
+  }
+  #bB-homeDiv-C {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #bB-homeDiv-C div h3 {
+    font-size: 4rem;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  #bB-homeDiv-C div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  #btn1-480-hD-C {
+    display: flex;
+    font-size: 2rem;
+    width: 50%;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0;
+    transition: 0.3s;
+  }
+  #btn1-480-hD-C a {
+    width: 100%;
+  }
+  #btn2-480-hD-C {
+    display: none;
+  }
+  #carouselHome {
+    display: flex;
+    flex-direction: row;
+  }
+  #cH-3 {
+    margin: 0 0 0 0;
+  }
+  #cH-4 {
+    margin: -1.5 0 0 0;
+  }
+}
+@media (min-width: 1200px) {
+  #navbar img {
+    width: 50%;
+  }
+  .cH-Section {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+  }
+  .cH-Section a img {
+    width: 50%;
+  }
+  .cH-Section a #cH-4 {
+    width: 85%;
+  }
+  #bB-homeDiv-A p {
+    font-size: 1.7rem;
+  }
+  #bB-homeDiv-A section img {
+    width: 100%;
+    height: 50% !important;
+  }
 }/*# sourceMappingURL=home.css.map */
