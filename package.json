@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.10.3",
     "sweetalert": "^2.1.2"
   }
 }

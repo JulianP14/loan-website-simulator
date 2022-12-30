@@ -1,0 +1,70 @@
+@media (min-width: 370px) {
+  #contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f4f4f4;
+  }
+  #contactForm h3 {
+    color: #000;
+    font-size: 2rem;
+    padding: 1rem 0;
+    font-weight: 550;
+  }
+  #contactForm p {
+    font-size: 1.4rem;
+    color: #4d71be;
+    font-weight: 550;
+  }
+  #contactForm form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  #contactForm form .formStructureTwoinputsVariation {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+  }
+  #contactForm form .formStructureTwoinputsVariation div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #contactForm form .formStructureTwoinputsVariation div svg {
+    margin: 1rem 0;
+  }
+  #contactForm form label {
+    font-size: 1.3rem;
+    color: #808080;
+  }
+  #contactForm form #divButtonEnviar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #contactForm form #divButtonEnviar button {
+    margin: 1rem 0;
+    padding: 0.5rem 1.5rem;
+    transition: 0.3s;
+  }
+  #contactForm form #divButtonEnviar button:hover {
+    background-color: #0d6efd;
+    color: #fff;
+  }
+}
+@media (min-width: 768px) {
+  #contactForm form {
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  #contactForm form {
+    width: 70%;
+  }
+}/*# sourceMappingURL=contact.css.map */

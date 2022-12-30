@@ -1,19 +1,20 @@
-@media (min-width:480px) {
+@media (min-width:370px) {
 
     /* RESPONSIVE NAVBAR */
     #navbar {
         position: sticky;
         top: 0;
-        background: #1f3963;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(31, 57, 99, 1) 26%, rgba(70, 125, 222, 1) 100%);
         display: flex;
         flex-direction: row;
+        border-bottom: .1rem solid #000;
 
         img {
             width: 100%
         }
-    }
 
-    ;
+    }
 
     .navbar container-fluid {
         flex-wrap: wrap;
@@ -28,7 +29,6 @@
         flex-direction: row;
         flex-wrap: wrap !important;
         justify-content: center;
-        background: #1f3963;
         padding: 1rem;
         width: 70%;
         text-align: left;
@@ -116,17 +116,20 @@
         }
     }
 
-    .bB-hD-sImage{
+    .bB-hD-sImage {
         display: flex;
         flex-direction: column;
         align-items: center;
         background-image: url('../../src/assets/imgs/lending8.jpg');
         padding: 10rem;
-        p, h3{
+
+        p,
+        h3 {
             color: #fff;
             text-align: center;
         }
-        button{
+
+        button {
             width: max-content;
             background-color: #fff;
             color: #1f3963;
@@ -234,10 +237,10 @@
             font-weight: 500;
         }
 
-        
+
 
         button:hover {
-            background-color: #5b5995;
+            background-color: #0d6efd !important;
         }
 
         a {
@@ -266,15 +269,15 @@
 
 }
 
-;
-
 footer {
     background-color: #1f3963;
     display: flex;
     padding: 2rem 0;
     flex-direction: column;
     align-items: center;
-
+    #fD-div p{
+        font-size: 1rem;
+    }
     div {
         display: grid;
         grid-template-columns: 90% 10%;
@@ -312,7 +315,7 @@ footer {
     #navbar {
         position: sticky;
         top: 0;
-        background: #1f3963;
+
         display: flex;
         flex-direction: row;
 
@@ -330,13 +333,21 @@ footer {
     #bB-homeDiv-C {
         display: flex;
         flex-direction: row-reverse;
-        div{
+        justify-content: center;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60%;
+
             h3 {
                 font-size: 4rem;
                 text-align: center;
                 padding: 0 2rem;
             }
-            div{
+
+            div {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -348,12 +359,13 @@ footer {
     #btn1-480-hD-C {
         display: flex;
         font-size: 2rem;
-        width: 50%;
+        width: auto;
         text-align: center;
-        padding: .5rem;
+        padding: .5rem 1rem;
         margin: 0;
         transition: 0.3s;
-        a{
+
+        a {
             width: 100%;
         }
     }
@@ -362,7 +374,7 @@ footer {
         display: none;
     }
 
-    #carouselHome{
+    #carouselHome {
         display: flex;
         flex-direction: row;
     }
@@ -374,27 +386,29 @@ footer {
     #cH-4 {
         margin: -1.5 0 0 0;
     }
-    
+
 }
 
 @media (min-width:1200px) {
 
     #navbar {
         img {
-            width: 50%
+            width: 40%
         }
     }
 
-    .cH-Section{
+    .cH-Section {
         padding: 2rem 0;
         display: flex;
         flex-direction: row;
         gap: 3rem;
         justify-content: center;
-        a{
-            img{
+
+        a {
+            img {
                 width: 50%;
             }
+
             #cH-4 {
                 width: 85%;
             }
@@ -405,13 +419,31 @@ footer {
         p {
             font-size: 1.7rem;
         }
-        section{
-            img{
+
+        section {
+            img {
                 width: 100%;
-                height: 50% !important;
+                height: 50%;
             }
         }
     }
+
+    #bB-homeDiv-C {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 10rem;
+        justify-content: center;
+
+        div {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    #btn2-480-hD-C {
+        width: auto;
+        padding: 0.5rem 1rem;
+    }
+
 }
-
-

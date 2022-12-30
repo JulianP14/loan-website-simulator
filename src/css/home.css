@@ -1,12 +1,14 @@
-@media (min-width: 480px) {
+@media (min-width: 370px) {
   /* RESPONSIVE NAVBAR */
   #navbar {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background: #1f3963;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(31, 57, 99) 26%, rgb(70, 125, 222) 100%);
     display: flex;
     flex-direction: row;
+    border-bottom: 0.1rem solid #000;
   }
   #navbar img {
     width: 100%;
@@ -22,7 +24,6 @@
     flex-direction: row;
     flex-wrap: wrap !important;
     justify-content: center;
-    background: #1f3963;
     padding: 1rem;
     width: 70%;
     text-align: left;
@@ -94,7 +95,8 @@
     background-image: url("../../src/assets/imgs/lending8.jpg");
     padding: 10rem;
   }
-  .bB-hD-sImage p, .bB-hD-sImage h3 {
+  .bB-hD-sImage p,
+.bB-hD-sImage h3 {
     color: #fff;
     text-align: center;
   }
@@ -190,7 +192,7 @@
     font-weight: 500;
   }
   #bB-homeDiv-C button:hover {
-    background-color: #5b5995;
+    background-color: #0d6efd !important;
   }
   #bB-homeDiv-C a {
     text-decoration: none;
@@ -217,6 +219,9 @@ footer {
   padding: 2rem 0;
   flex-direction: column;
   align-items: center;
+}
+footer #fD-div p {
+  font-size: 1rem;
 }
 footer div {
   display: grid;
@@ -249,7 +254,6 @@ footer section {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background: #1f3963;
     display: flex;
     flex-direction: row;
   }
@@ -262,13 +266,20 @@ footer section {
   #bB-homeDiv-C {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
   }
-  #bB-homeDiv-C div h3 {
+  #bB-homeDiv-C .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+  }
+  #bB-homeDiv-C .container h3 {
     font-size: 4rem;
     text-align: center;
     padding: 0 2rem;
   }
-  #bB-homeDiv-C div div {
+  #bB-homeDiv-C .container div {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -277,9 +288,9 @@ footer section {
   #btn1-480-hD-C {
     display: flex;
     font-size: 2rem;
-    width: 50%;
+    width: auto;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 0;
     transition: 0.3s;
   }
@@ -302,7 +313,7 @@ footer section {
 }
 @media (min-width: 1200px) {
   #navbar img {
-    width: 50%;
+    width: 40%;
   }
   .cH-Section {
     padding: 2rem 0;
@@ -322,6 +333,19 @@ footer section {
   }
   #bB-homeDiv-A section img {
     width: 100%;
-    height: 50% !important;
+    height: 50%;
+  }
+  #bB-homeDiv-C {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10rem;
+    justify-content: center;
+  }
+  #bB-homeDiv-C div img {
+    width: 100%;
+  }
+  #btn2-480-hD-C {
+    width: auto;
+    padding: 0.5rem 1rem;
   }
 }/*# sourceMappingURL=home.css.map */
