@@ -32,7 +32,7 @@
     color: #faf4f4;
   }
   #container-fluid-div-img {
-    width: 14%;
+    width: 10rem;
     padding: 0;
     margin: auto;
   }
@@ -311,6 +311,10 @@ footer section {
     margin: -1.5 0 0 0;
   }
 }
+#container-fluid-div-img a img {
+  width: 10rem;
+}
+
 @media (min-width: 1200px) {
   #navbar img {
     width: 40%;

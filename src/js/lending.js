@@ -128,6 +128,7 @@
                 Swal.fire({
                     title: "Titulo",
                     text: "MESSAGE",
+                    width: '50%',
                     html: 
                     `
                         El sr/sra: ${inputName.value} ${inputLastName.value} <br>
@@ -135,37 +136,15 @@
                         <br>
                         Solicita un prestamo por: $${inputAmount.value}
                         <br>
-                        A depositar en el banco ${bankEntity}
+                        A depositar en el ${bankEntity}
+                        <br>
+                        <br>
+                        <h4><strong>¿Desea continuar con el proceso?</strong></h4>
                     `,
                     icon: "info",
                     button: "Confirmar"
                 })
             },1000)
-            setTimeout(() => {
-                mostrarResultado.innerHTML = 
-            `
-            <div>
-                <p class = "parrafoResultado">Nombre: ${inputName.value + " " + inputLastName.value}</p>
-                <p class = "parrafoResultado">Con DNI: ${inputDni.value}</p>
-            </div>
-            <div>
-                <p class="parrafoResultado">Estado laboral: ${employmentStatus}</p>
-            </div>
-            <div>
-                <p class="parrafoResultado">Entidad Bancaria: ${bankEntity}</p>
-                <p class="parrafoResultado">CBU: ${inputCbu.value}</p>
-            </div>
-            <div>
-                <p class = "parrafoResultado">Ha solicitado un prestamo por: $${inputAmount.value}</p>
-            </div>
-            
-            <div id="botonResultado"> 
-                <input type="submit" name="submit" id="submitResultado" value="Solicitar">
-            </div>
-            `
-            
-            }, 1000);
-            
         };
     };
 
@@ -204,55 +183,6 @@
     function hideThreeInputs () {
         threeInputsDiv.style.display = "none";
     };
-
-    // Access the "backend.js" to show the three {} of the defaultLoans []. Triggers "hideContent()" amd ""
-    showDefaultLoans.addEventListener("click", () => {
-        hideButtons1();
-        showDefaultLoansHTML.innerHTML = 
-        `
-        <h2>Prestamos preferidos por nuestros clientes </h2>
-            <section>
-                <div>
-                    <h3>Prestamo 1</h3>
-                        <p>
-                            Monto: ${defaultLoans[0].amount}
-                        </p>
-                        <p>
-                            Cuotas: ${defaultLoans[0].installments}
-                        </p>
-                        <p>
-                            Monto x Cuota: ${defaultLoans[0].installmentsValue}
-                        </p>
-                </div>
-                <div>
-                    <h3>Prestamo 1</h3>
-                        <p>
-                            Monto: ${defaultLoans[1].amount}
-                        </p>
-                        <p>
-                            Cuotas: ${defaultLoans[1].installments}
-                        </p>
-                        <p>
-                            Monto x Cuota: ${defaultLoans[1].installmentsValue}
-                        </p>
-                </div>
-                <div>
-                    <h3>Prestamo 1</h3>
-                        <p>
-                            Monto: ${defaultLoans[2].amount}
-                        </p>
-                        <p>
-                            Cuotas: ${defaultLoans[2].installments}
-                        </p>
-                        <p>
-                            Monto x Cuota: ${defaultLoans[2].installmentsValue}
-                        </p>
-                </div>     
-            </section>
-        `
-        hideContent();
-        showThreeInputs();
-    });
 
 
 //Tests the buttons from each default loan

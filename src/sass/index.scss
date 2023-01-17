@@ -54,7 +54,7 @@ input::-webkit-inner-spin-button {
         border: 2px solid black;
     }
 
-    #bodyUl {
+    /* #bodyUl {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -64,9 +64,9 @@ input::-webkit-inner-spin-button {
         height: 100%;
         padding: 1rem;
         margin-bottom: .1rem;
-    }
+    } */
 
-    .bU-li {
+    /* .bU-li {
         font-size: 2.2rem;
         font-weight: 600;
     }
@@ -86,17 +86,18 @@ input::-webkit-inner-spin-button {
 
     .bU-lA:hover {
         color: #1f3963;
-    }
+    } */
 
     #boxBody {
         background-color: #faf4f4;
         width: auto;
     }
 
+    /* #titulo {
+        font-size: 32rem;
+    } */
 
-    #titulo {
-        font-size: 3rem;
-    }
+    
 
     #formStructureDIV {
         display: flex;
@@ -111,7 +112,7 @@ input::-webkit-inner-spin-button {
     }
 
     #formStructure {
-        width: 90%;
+        width: 45rem;
         padding: 1rem;
         background-color: #fff;
         border-radius: 1.5rem;
@@ -157,6 +158,7 @@ input::-webkit-inner-spin-button {
     }
 
     .formStructureTwoinputs {
+        z-index: 1;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -266,32 +268,31 @@ input::-webkit-inner-spin-button {
 
 @media(min-width:768px) {
     #formStructure {
-        width: 60%;
+        width: 50rem;
     }
+
+    #container-fluid-text{
+        display: flex;
+        flex-direction: row;
+
+    }
+
 }
 
 @media(min-width:992px) {
     #formStructure {
-        width: 45%;
+        width: 55rem;
     }
-}
 
-
-@media(min-width:1200px) {
-    #formStructure {
-        width: 45%;
+    #container-fluid-text {
+        width: auto;
     }
-}
+    #navBarHyperLinks{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
 
-@media(min-width:1500px) {
-    #formStructure {
-        width: 40%;
-    }
-}
-
-@media(min-width:1700px) {
-    #formStructure {
-        width: 30%;
     }
 }
 

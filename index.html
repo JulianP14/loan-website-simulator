@@ -11,8 +11,8 @@
     <script src="./src/js/backend.js" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script> -->
-
-    <script src="../../jsbt/bootstrap.min.js" defer></script>
+    <script src="./jsbt/bootstrap.min.js" defer></script>
+    <script src="./jsbt/bootstrap.bundle.min.js" defer></script>
 
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/css/index.css">
@@ -23,9 +23,9 @@
 <body id="body">
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid" id="container-fluid-div-img">
-            <a href="./public/html/home.html"><img src="../../src/assets/imgs/lending7.png" alt="Prestame"></a>
+            <a href="#"><img src="../../src/assets/imgs/lending7.png" alt="Prestame"></a>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" id="navBarHyperLinks">
             <a class="navbar-brand navBarText" href="./public/html/home.html">Home</a>
             <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link navBarText" href="#">Loan Simulator</a>
+                        <a class="nav-link navBarText" href="../../index.html">Loan Simulator</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navBarText" href="./public/html/contact.html">Contact</a>
@@ -109,8 +109,8 @@
                                 </li>
                                 <li><a class="dropdown-item inputBank" href="#" id="inputBancoSantander">Banco
                                         Santander</a></li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoICBC">ICBC</a></li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoHSBC">HSBC</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoICBC">Banco ICBC</a></li>
+                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoHSBC">Banco HSBC</a></li>
                                 <li><a class="dropdown-item inputBank" href="#" id="inputBancoItau">Banco Itau</a></li>
                                 <li class=""><a class="dropdown-item inputBank" href="#" id="inputBancoNacion">Banco
                                         Nación</a></li>
@@ -156,27 +156,6 @@
 
         </div>
 
-        <!-- <div id="showDefaultLoansDiv">
-            <div id="showDefaultLoansHTML">
-
-            </div>
-            <input type="submit" name="" value="Ver Prestamos Mas Comunes" id="showDefaultLoans"
-                class="showDefaultLoans btn btn-primary">
-        </div>
-
-        <div id="threeInputsDiv">
-            <input type="submit" value="Solicitar" id="firstInput" class="threeInputs btn btn-primary">
-            <input type="submit" value="Solicitar" id="secondInput" class="threeInputs btn btn-primary">
-            <input type="submit" value="Solicitar" id="thirdInput" class="threeInputs btn btn-primary">
-        </div>
-
-        <div id="hideDefaultLoansDiv">
-            <input type="submit" name="" value="Ocultar" id="hideDefaultLoans" class="showDefaultLoans btn btn-primary">
-        </div>
-
-        <div id="tI-texts">
-
-        </div> -->
     </div>
 
     <footer>
@@ -191,13 +170,17 @@
         <div id="fD-div">
             <p>
                 El otorgamiento del préstamo personal, se encuentra sujeto a calificación crediticia y condiciones de
-                contratación. 
-                En caso de otorgarse el préstamo personal, el monto, plazo, tasa de interés y demás condiciones, serán establecidos por la entidad financiera elegida - en función del resultado que arroje la calificación crediticia efectuada sobre la base de sus políticas vigentes al momento del otorgamiento mismo.
-                Préstamos personales monto en pesos: máximo $500.000, mínimo $1.000. Plazo: máximo 36 meses, mínimo 3 meses.
+                contratación.
+                En caso de otorgarse el préstamo personal, el monto, plazo, tasa de interés y demás condiciones, serán
+                establecidos por la entidad financiera elegida - en función del resultado que arroje la calificación
+                crediticia efectuada sobre la base de sus políticas vigentes al momento del otorgamiento mismo.
+                Préstamos personales monto en pesos: máximo $500.000, mínimo $1.000. Plazo: máximo 36 meses, mínimo 3
+                meses.
 
                 Ejemplo. Para un préstamo de $200.000 en 36 meses: Tasa Nominal Anual fija (88.8%), Tasa Efectiva Anual
-                fija (192.47%). Costo Financiero Total Nominal Anual: 112.19%. 
-                Ejemplo. Para un préstamo de $5.000 a 90 días con TNA de 88.8% el cliente devolverá $5949.21. Tasa Máxima Efectiva Anual: 192.47%. Tasa Mínima
+                fija (192.47%). Costo Financiero Total Nominal Anual: 112.19%.
+                Ejemplo. Para un préstamo de $5.000 a 90 días con TNA de 88.8% el cliente devolverá $5949.21. Tasa
+                Máxima Efectiva Anual: 192.47%. Tasa Mínima
                 Efectiva Anual: 25%.
                 Todos los costos aquí detallados son solamente a título informativo, no constituyen una oferta y pueden
                 variar al momento de solicitarlos, sin previo aviso. Asimismo, están sujetos a políticas de mercado y/o

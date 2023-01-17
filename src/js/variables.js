@@ -31,9 +31,6 @@ const allUsers = []
 let interes = 1.70
 let meses = 1.2
 
-const showDefaultLoans = document.getElementById("showDefaultLoans")
-const showDefaultLoansHTML = document.getElementById("showDefaultLoansHTML")
-const hideDefaultLoans = document.getElementById("hideDefaultLoans")
 
 const threeInputs = document.querySelectorAll(".threeInputs")
 const firstInput = document.getElementById("firstInput")
