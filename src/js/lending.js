@@ -70,7 +70,7 @@
             if(typeof inputCbu === "string" || isNaN(inputCbuNum)) {
                 inputCbu.style.border = ".1rem solid red"
                 inputCbu.value = ""
-                inputCbu.placeholder = "Ingrese un CBU correcto"
+                inputCbu.placeholder = "Ingrese un CBU correcto (22 numeros)"
             } else {
                 let inputCbuNumToStr = inputCbuNum.toString()
                 if(inputCbuNumToStr.length <= "21" || inputCbuNumToStr.length >= "23"){
@@ -205,19 +205,7 @@
     }
 
 
-/* When the user clicks one of the three default loans buttons:
-        . Triggers "hideContentHTML()" => A function that hides the defaultLoans
-        . Triggers "hideButtons2()" => A function that hides the "ocultar" button
-        . Triggers "hideThreeInputs()" => A function that hides the three "solicitar" buttons
-
-        . I'D LIKE THIS TO BE ADDED TO THE CLASS USER. SO IM GONNA NEED TO DO SOME THINGS
-            . DELETE THE innerHTML 
-            . VALIDATE ALL THE USERS DATA
-            . PUSH IT TO THE CLASS
-
-*/
     firstInput.addEventListener("click", () => {
-        console.log("Hola")
         Swal.fire({
             title: "Confirmacion",
             text:`"Solicita el prestamo de ${defaultLoans[0].amount}?"`,
@@ -228,7 +216,7 @@
             hideThreeInputs()
         }, 1000)).then(setTimeout(() => {
             showOneOfThreeButtons.innerHTML = `
-            <div>
+                <div>
                     <h3>Prestamo 1</h3>
                         <p>
                             Monto: ${defaultLoans[0].amount}

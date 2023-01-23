@@ -361,10 +361,10 @@ footer section {
     width: 100%;
     background-color: #f4f4f4;
   }
-  #contactForm h3 {
+  #contactForm h2 {
     color: #000;
-    font-size: 2rem;
-    padding: 1rem 0;
+    font-size: 2.4rem;
+    padding: 2rem 0;
     font-weight: 550;
   }
   #contactForm p {
