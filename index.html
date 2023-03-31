@@ -10,13 +10,12 @@
     <script src="./src/js/lending.js" defer></script>
     <script src="./src/js/backend.js" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script> -->
-    <script src="./jsbt/bootstrap.min.js" defer></script>
+    
     <script src="./jsbt/bootstrap.bundle.min.js" defer></script>
+    <script src="./jsbt/po"></script>
 
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/css/index.css">
-
     <title>Document</title>
 </head>
 
@@ -27,7 +26,7 @@
         </div>
         <div class="container-fluid" id="navBarHyperLinks">
             <a class="navbar-brand navBarText" href="./public/html/home.html">Home</a>
-            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"                                   
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon navbar-button"></span>
@@ -35,10 +34,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link navBarText" href="../../index.html">Loan Simulator</a>
+                        <a class="nav-link navBarText" href="#">Simulador de Préstamos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navBarText" href="./public/html/contact.html">Contact</a>
+                        <a class="nav-link navBarText" href="./public/html/cotizaciones.html">Cotizaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navBarText" href="./public/html/contact.html">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -126,7 +128,7 @@
                 </div>
                 <div class="formEmailPhone">
                     <div class="mb-3 formEmailPhoneInputs">
-                        <input type="mask" inputmode="numeric" class="form-control inputColor" id="inputCbu"
+                        <input type="number" inputmode="numeric" class="form-control inputColor" id="inputCbu"
                             aria-describedby="emailHelp" maxlength="22" placeholder="Ingrese su CBU">
                     </div>
                     <div class="mb-3 formEmailPhoneInputs">
@@ -158,7 +160,7 @@
 
     </div>
 
-    <footer>
+    <footer class="footerResto">
         <div id="footerDiv">
             <h2>PrestaMe - Queremos cumplir tus sueños.</h2>
             <a href="#">

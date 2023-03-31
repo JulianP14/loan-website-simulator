@@ -1,5 +1,5 @@
 @import 'home';
-@import 'aboutus';
+@import 'investments';
 @import 'contact';
 
 * {
@@ -38,6 +38,7 @@ input::-webkit-inner-spin-button {
 
 /*  MEDIAS QUERIES  */
 @media(min-width:370px) {
+    
     body {
         background-color: #faf4f4;
     }
@@ -59,7 +60,7 @@ input::-webkit-inner-spin-button {
         flex-direction: row;
         justify-content: center;
         list-style-type: none;
-        background-color: #4d71be;
+        background-color: #6984bf;
         width: 100%;
         height: 100%;
         padding: 1rem;
@@ -100,14 +101,15 @@ input::-webkit-inner-spin-button {
     
 
     #formStructureDIV {
+        padding: 10rem 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        /* background-color: #4d71be; */
+        /* background-color: #6984bf; */
         background-color: #f4f4f4;
         opacity: 1;
-        background-image: linear-gradient(30deg, #4d71be 12%, transparent 12.5%, transparent 87%, #4d71be 87.5%, #4d71be), linear-gradient(150deg, #4d71be 12%, transparent 12.5%, transparent 87%, #4d71be 87.5%, #4d71be), linear-gradient(30deg, #4d71be 12%, transparent 12.5%, transparent 87%, #4d71be 87.5%, #4d71be), linear-gradient(150deg, #4d71be 12%, transparent 12.5%, transparent 87%, #4d71be 87.5%, #4d71be), linear-gradient(60deg, #4d71be77 25%, transparent 25.5%, transparent 75%, #4d71be77 75%, #4d71be77), linear-gradient(60deg, #4d71be77 25%, transparent 25.5%, transparent 75%, #4d71be77 75%, #4d71be77);
-        background-size: 80px 140px;
+        background-image: linear-gradient(30deg, #6984bf 12%, transparent 12.5%, transparent 87%, #6984bf 87.5%, #6984bf), linear-gradient(150deg, #6984bf 12%, transparent 12.5%, transparent 87%, #6984bf 87.5%, #6984bf), linear-gradient(30deg, #6984bf 12%, transparent 12.5%, transparent 87%, #6984bf 87.5%, #6984bf), linear-gradient(150deg, #6984bf 12%, transparent 12.5%, transparent 87%, #6984bf 87.5%, #6984bf), linear-gradient(60deg, #6984bf77 25%, transparent 25.5%, transparent 75%, #6984bf77 75%, #6984bf77), linear-gradient(60deg, #6984bf77 25%, transparent 25.5%, transparent 75%, #6984bf77 75%, #6984bf77);
+        background-size: 200px 140px;
         background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     }
 
@@ -116,8 +118,10 @@ input::-webkit-inner-spin-button {
         padding: 1rem;
         background-color: #fff;
         border-radius: 1.5rem;
-        margin: 2rem 0;
         border: .2rem solid #000;
+        box-shadow: 0rem 0rem 2rem #414141;
+        margin: 4rem 0 16rem 0 ;
+
     }
 
     #formStructureHead {
@@ -153,7 +157,7 @@ input::-webkit-inner-spin-button {
     }
 
     #formStructureH3 {
-        color: #4d71be;
+        color: #6984bf;
         text-align: left;
     }
 
@@ -281,7 +285,8 @@ input::-webkit-inner-spin-button {
 
 @media(min-width:992px) {
     #formStructure {
-        width: 55rem;
+        width: 60rem;
+
     }
 
     #container-fluid-text {
@@ -380,3 +385,4 @@ input::-webkit-inner-spin-button {
     padding: 1rem;
     flex-direction: row;
 }
+

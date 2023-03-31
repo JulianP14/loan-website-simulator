@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: row;
     border-bottom: 0.1rem solid #000;
+    z-index: 1000;
   }
   #navbar img {
     width: 100%;
@@ -93,7 +94,7 @@
     flex-direction: column;
     align-items: center;
     background-image: url("../../src/assets/imgs/lending8.jpg");
-    padding: 10rem;
+    padding: 5rem 2rem;
   }
   .bB-hD-sImage p,
 .bB-hD-sImage h3 {
@@ -117,7 +118,7 @@
   }
   #bB-homeDiv-B section h3 {
     text-align: center;
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: #274980;
   }
@@ -137,6 +138,7 @@
     color: #808080;
     text-align: center;
     font-weight: 500;
+    padding: 0 4rem;
   }
   #carouselHome {
     display: flex;
@@ -180,16 +182,17 @@
   }
   #bB-homeDiv-C h3 {
     text-align: center;
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: #274980;
-    padding: 2rem 0rem;
+    padding: 1.5rem 1rem;
   }
   #bB-homeDiv-C p {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #808080;
     font-weight: 500;
+    padding: 0 4rem;
   }
   #bB-homeDiv-C button:hover {
     background-color: #0d6efd !important;
@@ -213,30 +216,35 @@
     margin: 2rem;
   }
 }
-footer {
+.footerResto {
   background-color: #1f3963;
   display: flex;
-  padding: 2rem 0;
+  padding: 0;
   flex-direction: column;
   align-items: center;
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
 }
-footer #fD-div p {
-  font-size: 1rem;
+.footerResto #fD-div p {
+  font-size: 0.8rem;
 }
-footer div {
+.footerResto div {
   display: grid;
   grid-template-columns: 90% 10%;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
-footer div h2 {
+.footerResto div h2 {
   color: #faf4f4;
 }
-footer div img {
+.footerResto div img {
   width: 100%;
 }
-footer section {
-  margin: 2rem 0;
+.footerResto section {
+  margin: 1rem 0;
   padding: 0.1rem;
   background: #faf4f4;
   width: 85%;
@@ -251,9 +259,6 @@ footer section {
 
 @media (min-width: 768px) {
   #navbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
     display: flex;
     flex-direction: row;
   }
@@ -275,9 +280,9 @@ footer section {
     width: 60%;
   }
   #bB-homeDiv-C .container h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
   #bB-homeDiv-C .container div {
     display: flex;
