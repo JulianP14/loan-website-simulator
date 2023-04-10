@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,14 @@
     <script src="./src/js/lending.js" defer></script>
     <script src="./src/js/backend.js" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
     <script src="./jsbt/bootstrap.bundle.min.js" defer></script>
     <script src="./jsbt/po"></script>
-
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/css/index.css">
     <title>Document</title>
@@ -26,7 +30,7 @@
         </div>
         <div class="container-fluid" id="navBarHyperLinks">
             <a class="navbar-brand navBarText" href="./public/html/home.html">Home</a>
-            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"                                   
+            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon navbar-button"></span>
@@ -76,8 +80,8 @@
                             aria-describedby="emailHelp" placeholder="DNI">
                     </div>
                     <div class="mb-3 formStructureTwoinputsDateOfBirth">
-                        <input type="text" class="form-control inputColor" id="inputDob" aria-describedby="emailHelp"
-                            placeholder="Fecha de Nacimiento">
+                        <input type="text" name="date" class="form-control inputColor" id="inputDob"
+                            aria-describedby="emailHelp" placeholder="Ingrese su fecha de nacimiento." maxlength="10">
                         <label for="" id="fechaNacimiento">DD/MM/AAAA</label>
                     </div>
                 </div>

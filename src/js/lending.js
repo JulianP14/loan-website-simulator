@@ -1,23 +1,33 @@
+$(document).ready(function () {
+    let today = new Date();
+    let maxYear = today.getFullYear() - 18;
+    $("#inputDob").datepicker({
+        dateFormat: "dd/mm/yy",
+        changeYear: true,
+        yearRange: "-100:" + maxYear
+    });
+});
+
 inputSubmit.addEventListener("click", (event) => {
     event.preventDefault();
     const inputs = [inputName, inputLastName, inputAmount, inputDob, inputDni, inputEmail, inputCbu, inputPhone];
     const validarInputs = inputs.every(input => input.value !== "");
-        if (validarInputs) {
-            mostrarData();
-            addUser();
-            setTimeout(clearInputs, 1000); //Version mas simple
-        } else {
-            return Swal.fire({
-                title: "Error",
-                text: "Debes ingresar todos los campos correctamente",
-                icon: "error",
-                confirmButtonText: "Ok"
-            })
-        }
+    if (validarInputs) {
+        mostrarData();
+        addUser();
+        setTimeout(clearInputs, 1000); //Version mas simple
+    } else {
+        return Swal.fire({
+            title: "Error",
+            text: "Debes ingresar todos los campos correctamente",
+            icon: "error",
+            confirmButtonText: "Ok"
+        })
+    }
 });
 
 
-// Trying to improve the functionality from above
+// *Trying to improve the functionality from above
 let bankEntity = inputBank.forEach(inputBank => {
     inputBank.addEventListener("click", (e) => {
         e.preventDefault();
@@ -36,16 +46,16 @@ let employmentStatus = inputEmployment.forEach(inputEmployment => {
     })
 })
 
-//Checking and restablishing inputAmount
+// *Checking and restablishing inputAmount
 inputAmount.addEventListener("change", () => {
     if (inputAmount.value > 500000) {
         let valorDef = 500000
         inputAmount.value = valorDef;
 
-        
+
     }
     if (inputAmount.value < 1000) {
-        let valorDef = 1000 
+        let valorDef = 1000
         inputAmount.value = valorDef;
     }
 })
@@ -62,12 +72,12 @@ inputCbu.addEventListener("blur", () => {
 //Erase inputs after submit 
 const clearInputs = () => {
     [
-        inputName, 
-        inputLastName, 
-        inputDni, 
-        inputDob, 
-        inputCbu, 
-        inputEmail, 
+        inputName,
+        inputLastName,
+        inputDni,
+        inputDob,
+        inputCbu,
+        inputEmail,
         inputPhone
     ].forEach(input => input.value = '');
 
