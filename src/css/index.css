@@ -552,7 +552,12 @@
 }
 @media (min-width: 1530px) {
   #footerCotizaciones {
-    margin-top: 28rem;
+    margin-top: 29rem;
+  }
+}
+@media (min-width: 1710px) {
+  #footerCotizaciones {
+    margin-top: 30rem;
   }
 }
 @media (min-width: 370px) {
@@ -607,12 +612,16 @@
   }
   #contactForm form #divButtonEnviar button {
     margin: 1rem 0;
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 1.5rem;
     transition: 0.3s;
   }
   #contactForm form #divButtonEnviar button:hover {
     background-color: #0d6efd;
     color: #fff;
+  }
+  .footerContact {
+    position: absolute;
+    bottom: 0;
   }
 }
 @media (min-width: 768px) {

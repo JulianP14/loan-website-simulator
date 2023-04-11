@@ -192,6 +192,11 @@
 }
 @media (min-width: 1530px) {
   #footerCotizaciones {
-    margin-top: 28rem;
+    margin-top: 29rem;
+  }
+}
+@media (min-width: 1710px) {
+  #footerCotizaciones {
+    margin-top: 30rem;
   }
 }/*# sourceMappingURL=investments.css.map */

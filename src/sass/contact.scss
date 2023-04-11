@@ -1,23 +1,25 @@
-@media (min-width:370px){
-    #contactForm{
+@media (min-width:370px) {
+    #contactForm {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         background-color: #f4f4f4;
 
-        h2{
+        h2 {
             color: #000;
             font-size: 2.4rem;
             padding: 2rem 0;
             font-weight: 550;
         }
-        p{
+
+        p {
             font-size: 1.4rem;
             color: #4d71be;
             font-weight: 550;
         }
-        form{
+
+        form {
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -25,55 +27,65 @@
             border-radius: 2rem;
             padding: 1.5rem;
             margin: 1rem 0;
-            .formStructureTwoinputsVariation{
+
+            .formStructureTwoinputsVariation {
                 display: flex;
                 flex-direction: row;
                 padding: .5rem;
-                div{
+
+                div {
                     display: flex;
                     flex-direction: column;
                     width: 100%;
-                    svg{
+
+                    svg {
                         margin: 1rem 0;
                     }
                 }
             }
-            label{
+
+            label {
                 font-size: 1.3rem;
                 color: #808080;
             }
-            #divButtonEnviar{
+
+            #divButtonEnviar {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
-                button{
+
+                button {
                     margin: 1rem 0;
-                    padding: .5rem 1.5rem;
+                    padding: 1rem 1.5rem;
                     transition: .3s;
                 }
-                button:hover{
+
+                button:hover {
                     background-color: #0d6efd;
                     color: #fff;
                 }
             }
         }
     }
+    .footerContact{
+        position: absolute;
+        bottom: 0;
+    }
 
 }
 
-@media (min-width:768px){
-    #contactForm{
-        form{
+@media (min-width:768px) {
+    #contactForm {
+        form {
             width: 70%;
         }
     }
 }
 
-@media (min-width:1200px){
-    #contactForm{
-        form{
+@media (min-width:1200px) {
+    #contactForm {
+        form {
             width: 70%;
         }
     }
 }
-
