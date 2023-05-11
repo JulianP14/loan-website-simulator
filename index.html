@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="./src/js/variables.js" defer></script>
-    <script src="./src/js/lending.js" defer></script>
+    <script src="./src/js/loan.js" defer></script>
     <script src="./src/js/backend.js" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
@@ -16,164 +16,157 @@
 
     <script src="./jsbt/bootstrap.bundle.min.js" defer></script>
     <script src="./jsbt/po"></script>
-    
+
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
-    <link rel="stylesheet" href="../../src/css/index.css">
+    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 
-<body id="body">
-    <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid" id="container-fluid-div-img">
-            <a href="#"><img src="../../src/assets/imgs/lending7.png" alt="Prestame"></a>
-        </div>
-        <div class="container-fluid" id="navBarHyperLinks">
-            <a class="navbar-brand navBarText" href="./public/html/home.html">Home</a>
-            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon navbar-button"></span>
+<body>
+    <nav class="navbar navbar-expand-lg loan__navbar">
+        <div class="container-fluid">
+            <img src="./src/assets/imgs/lending7.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-light"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="#">Simulador de Préstamos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="./public/html/cotizaciones.html">Cotizaciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="./public/html/contact.html">Contacto</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse loan__navbar-desplegable" id="navbarNavAltMarkup">
+                <div class="navbar-nav loan__navbar-desplegable_links">
+                    <a class="nav-link" href="./public/html/home.html">Home</a>
+                    <a class="nav-link" href="#">Loan Simulator</a>
+                    <a class="nav-link" href="./public/html/cotizaciones.html">Cotizaciones</a>
+                    <a class="nav-link" href="./public/html/contact.html">Contacto</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div id="boxBody">
-        <div id="formStructureDIV">
-            <form id="formStructure">
-                <div id="formStructureHead">
-                    <div id="formStructureInputDiv">
-                        <input type="number" name="number" id="inputAmount" class="formStructureHeadInput inputColor"
-                            placeholder="$500.000">
-                    </div>
-                    <div class="formStructureDiv">
-                        <h2 id="formStructureH2" class="formHeaders">Encontra tu prestamo ideal</h2>
-                        <h2 id="formStructureH3" class="formHeaders">en menos de un minuto</h2>
-                    </div>
-                </div>
-                <div class="formStructureTwoinputs">
-                    <div class="mb-3 divclass">
-                        <input type="text" class="form-control inputColor" id="inputName" aria-describedby="emailHelp"
-                            placeholder="Nombre(s)">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control inputColor" id="inputLastName"
-                            aria-describedby="emailHelp" placeholder="Apellido(s)">
-                    </div>
-                </div>
-                <div class="formStructureTwoinputsVariation">
-                    <div class="mb-3">
-                        <input type="mask" inputmode="numeric" class="form-control inputColor" id="inputDni"
-                            aria-describedby="emailHelp" placeholder="DNI">
-                    </div>
-                    <div class="mb-3 formStructureTwoinputsDateOfBirth">
-                        <input type="text" name="date" class="form-control inputColor" id="inputDob"
-                            aria-describedby="emailHelp" placeholder="Ingrese su fecha de nacimiento." maxlength="10">
-                        <label for="" id="fechaNacimiento">DD/MM/AAAA</label>
-                    </div>
-                </div>
-                <div class="formStructureTwoinputs">
-                    <div class="mb-3 dropdownModifiers">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="in ">
-                                Situacion Laboral
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item inputEmployment" href="#" id="inputEmpleado"
-                                        value="Empleado">Empleado</a></li>
-                                <li><a class="dropdown-item inputEmployment" href="#"
-                                        id="inputDesempleado">Desempleado</a></li>
-                                <li><a class="dropdown-item inputEmployment" href="#" id="inputAutonomo">Autónomo</a>
-                                </li>
-                                <li><a class="dropdown-item inputEmployment" href="#" id="inputJubilado">Jubilado</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mb-3 dropdownModifiers">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Entidad Bancaria
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoGalicia">Banco Galicia</a>
-                                </li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoSantander">Banco
-                                        Santander</a></li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoICBC">Banco ICBC</a></li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoHSBC">Banco HSBC</a></li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoItau">Banco Itau</a></li>
-                                <li class=""><a class="dropdown-item inputBank" href="#" id="inputBancoNacion">Banco
-                                        Nación</a></li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoProvincia">Banco
-                                        Provincia</a></li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoCiudad">Banco Ciudad</a>
-                                </li>
-                                <li><a class="dropdown-item inputBank" href="#" id="inputBancoOtros">Otros Bancos</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="formEmailPhone">
-                    <div class="mb-3 formEmailPhoneInputs">
-                        <input type="number" inputmode="numeric" class="form-control inputColor" id="inputCbu"
-                            aria-describedby="emailHelp" maxlength="22" placeholder="Ingrese su CBU">
-                    </div>
-                    <div class="mb-3 formEmailPhoneInputs">
-                        <input type="text" class="form-control inputColor" id="inputEmail" aria-describedby="emailHelp"
-                            placeholder="Email">
-                    </div>
-                    <div class="mb-3 formEmailPhoneInputs">
-                        <input type="text" class="form-control inputColor" id="inputPhone" aria-describedby="emailHelp"
-                            placeholder="Telefono">
-                    </div>
-                </div>
-                <div id="inputCheckBox">
-                    <input type="checkbox" id="iC-input" class="inputColor">
-                    <label for="" id="iC-label">Acepto los terminos y politicas de uso</label>
-                </div>
-                <div id="inputSubmitDiv">
-                    <button type="submit" class="btn btn-primary" id="inputSubmit">SOLICITAR</button>
-                </div>
-            </form>
-        </div>
+    <div class="loan__index-form">
+        <form class="loan__index-form_form">
 
+            <div class="loan__index-form_form-section">
+                <section>
+                    <input type="number" name="number" id="inputAmount" placeholder="$500.000">
+                </section>
+                <div>
+                    <h2 class="formHeaders">Encontra tu prestamo ideal</h2>
+                    <h3 class="formHeaders">en menos de un minuto</h3>
+                </div>
+            </div>
 
+            <h2 class="info">Dejanos tus datos:</h2>
 
-        <!-- ///////////////////////////////////////////////// -->
+            <div class="loan__index-form_form-section2">
+                <div class="mb-3">
+                    <input type="text" class="form-control inputColor" id="inputName" aria-describedby="emailHelp"
+                        placeholder="Nombre(s)">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control inputColor" id="inputLastName" aria-describedby="emailHelp"
+                        placeholder="Apellido(s)">
+                </div>
+            </div>
 
-        <div id="mostrarResultado">
+            <div class="loan__index-form_form-section2">
+                <div class="mb-3">
+                    <input type="mask" inputmode="numeric" class="form-control" id="inputDni"
+                        aria-describedby="emailHelp" placeholder="DNI">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="date" class="form-control inputColor" id="inputDob"
+                        aria-describedby="emailHelp" placeholder="Ingrese su fecha de nacimiento." maxlength="10">
+                    <label for="" id="fechaNacimiento">DD/MM/AAAA</label>
+                </div>
+            </div>
 
-        </div>
+            <div class="loan__index-form_form-section3">
+                <div class="mb-3">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                            id="in ">
+                            Situacion Laboral
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item inputEmployment" href="#" id="inputEmpleado"
+                                    value="Empleado">Empleado</a></li>
+                            <li><a class="dropdown-item inputEmployment" href="#" id="inputDesempleado">Desempleado</a>
+                            </li>
+                            <li><a class="dropdown-item inputEmployment" href="#" id="inputAutonomo">Autónomo</a>
+                            </li>
+                            <li><a class="dropdown-item inputEmployment" href="#" id="inputJubilado">Jubilado</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-3 dropdownModifiers">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Entidad Bancaria
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoGalicia">Banco Galicia</a>
+                            </li>
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoSantander">Banco
+                                    Santander</a></li>
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoICBC">Banco ICBC</a></li>
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoHSBC">Banco HSBC</a></li>
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoItau">Banco Itau</a></li>
+                            <li class=""><a class="dropdown-item inputBank" href="#" id="inputBancoNacion">Banco
+                                    Nación</a></li>
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoProvincia">Banco
+                                    Provincia</a></li>
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoCiudad">Banco Ciudad</a>
+                            </li>
+                            <li><a class="dropdown-item inputBank" href="#" id="inputBancoOtros">Otros Bancos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+            <div class="loan__index-form_form-section2">
+                <div class="mb-3">
+                    <input type="number" inputmode="numeric" class="form-control inputColor" id="inputCbu"
+                        aria-describedby="emailHelp" maxlength="22" placeholder="Ingrese su CBU">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control inputColor" id="inputEmail" aria-describedby="emailHelp"
+                        placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control inputColor" id="inputPhone" aria-describedby="emailHelp"
+                        placeholder="Telefono">
+                </div>
+            </div>
+
+            <div class="loan__index-form_form-section4" id="inputCheckBox">
+                <input type="checkbox" id="iC-input" class="inputColor">
+                <label for="" id="iC-label">Acepto los terminos y politicas de uso</label>
+            </div>
+
+            <div class="loan__index-form_form-section4">
+                <button type="submit" class="" id="inputSubmit">SOLICITAR</button>
+            </div>
+        </form>
     </div>
 
-    <footer class="footerResto">
-        <div id="footerDiv">
-            <h2>PrestaMe - Queremos cumplir tus sueños.</h2>
+    <div id="mostrarResultado">
+    </div>  
+
+    <footer class="loan__index-footer">
+        <div class="loan__index-footer_logo">
+            <h3>PrestaMe - Queremos cumplir tus sueños.</h3>
             <a href="#">
                 <img src="../../src/assets/imgs/lending7.png" alt="">
             </a>
         </div>
-        <section>
-        </section>
-        <div id="fD-div">
+        <div>
             <p>
                 El otorgamiento del préstamo personal, se encuentra sujeto a calificación crediticia y condiciones de
                 contratación.

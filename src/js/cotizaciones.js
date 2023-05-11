@@ -59,6 +59,7 @@ inputCriptos.addEventListener('keydown', async (e) => {
 const valorDolar = async () => {
     try {
         const data = await readData('https://criptoya.com/api/dolar');
+        console.log(data);
         const { oficial, solidario, mep } = data;
         const ordenDolares = [
             { tipo: 'Dolar Oficial', monto: oficial },
@@ -67,12 +68,15 @@ const valorDolar = async () => {
         ];
         const divDolares = ordenDolares.map(dolar =>
             `
-            <div class="divDolares">
+            <section>
                 <h3>${dolar.tipo}</h3>  
                 <p>${formatMoney(dolar.monto)}</p>
-            </div>
+            </section>
         `).join('');
-        inputDolar.innerHTML = `<div class="ordenDolares">${divDolares}</div>`;
+        inputDolar.innerHTML =
+            `
+                ${divDolares}
+        `;
     } catch (error) {
         console.log(error);
     }
@@ -82,14 +86,25 @@ valorDolar();
 
 const valorDolarBlue = async () => {
     const data = await readData('https://criptoya.com/api/dolar');
-    const { blue } = data;
+    const { blue, blue_bid } = data;
     inputDolarBlue.innerHTML =
         `
-            <div class="divDolares">
                 <h3>Dolar Blue</h3>
-                <p>${formatMoney(blue)}</p>
-                <h4 id='dD-infoPrecio'>El precio se actualiza minuto a minuto (mientras el mercado esté operando).</h4>
-            </div>
+                <span class="loan__cotizaciones-dolares_blue">
+                    <section>
+                        <div>
+                            <h5>Compra</h5>
+                            <p>${formatMoney(blue_bid)}</p>
+                        </div>
+                        <div>   
+                            <h5>Venta</h5>
+                            <p>${formatMoney(blue)}</p>
+                        </div>
+                    </section>
+                </span>
+                <h4>
+                    El precio se actualiza minuto a minuto (mientras el mercado esté operando).
+                </h4>
         `
 }
 valorDolarBlue();
@@ -97,129 +112,125 @@ valorDolarBlue();
 const valorBancos = async () => {
     const data = await readData('https://criptoya.com/api/bancostodos');
     const { bapro, bbva, bna, brubank, ciudad, galicia, hipotecario, hsbc, icbc, macro, santander, supervielle } = data;
+    inputDolaresBancos.innerHTML =
+        `
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Ver Cotizaciones
+            </button>
+            <div class="collapse dolarBancos" id="collapseExample">
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancoprov.png' class='imgDolares'/>
+                        <h3>Provincia</h3>
+                    </div>    
+                    <p>Compra ${formatMoney(bapro.bid)}</p>
+                    <p>Venta ${formatMoney(bapro.ask)}</p>
+                </div>
 
-            inputDolaresBancos.innerHTML =
-                `
-                    <p>
-                        <button class="btn btn-primary btnCotizacionBancos" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            Cotización de Bancos
-                        </button>
-                    </p>
-                    <div class="collapse dolarBancos" id="collapseExample">
-                        <div class="card card-body">
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancoprov.png' class='imgDolares'/>
-                                    <h3>Provincia</h3>
-                                </div>    
-                                <p>Compra ${formatMoney(bapro.bid)}</p>
-                                <p>Venta ${formatMoney(bapro.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancobbva.png' class='imgDolares'/>
-                                    <h3>BBVA</h3>
-                                </div>
-                                <p>Compra ${formatMoney(bbva.bid)}</p>
-                                <p>Venta ${formatMoney(bbva.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/banconacion.png' class='imgDolares'/>
-                                    <h3>Nacion</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(bna.bid)}</p>
-                                    <p>Venta ${formatMoney(bna.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancociudad.png' class='imgDolares'/>
-                                    <h3>Ciudad</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(ciudad.bid)}</p>
-                                    <p>Venta ${formatMoney(ciudad.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancobrubank.png' class='imgDolares'/>
-                                    <h3>Brubank</h3>
-                                </div>    
-                                    <p>Compra ${formatMoney(brubank.bid)}</p>
-                                    <p>Venta ${formatMoney(brubank.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancogalicia.png' class='imgDolares'/>
-                                    <h3>Galicia</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(galicia.bid)}</p>
-                                    <p>Venta ${formatMoney(galicia.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancohipotecario.png' class='imgDolares'/>
-                                    <h3>Hipotecario</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(hipotecario.bid)}</p>
-                                    <p>Venta ${formatMoney(hipotecario.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancohsbc.png' class='imgDolares'/>
-                                    <h3>HSBC</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(hsbc.bid)}</p>
-                                    <p>Venta ${formatMoney(hsbc.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancoicbc.png' class='imgDolares'/>
-                                    <h3>ICBC</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(icbc.bid)}</p>
-                                    <p>Venta ${formatMoney(icbc.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancomacro.png' class='imgDolares'/>
-                                    <h3>Macro</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(macro.bid)}</p>
-                                    <p>Venta ${formatMoney(macro.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancosantander.png' class='imgDolares'/>
-                                    <h3>Santander</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(santander.bid)}</p>
-                                    <p>Venta ${formatMoney(santander.ask)}</p>
-                            </div>
-
-                            <div class="divDolares">
-                                <div class='dD-imgtxt'>
-                                    <img src='../../src/assets/imgs/bancosupervielle.png' class='imgDolares'/>
-                                    <h3>Supervielle</h3>
-                                </div>
-                                    <p>Compra ${formatMoney(supervielle.bid)}</p>
-                                    <p>Venta ${formatMoney(supervielle.ask)}</p>
-                            </div>
-                        </div>
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancobbva.png' class='imgDolares'/>
+                        <h3>BBVA</h3>
                     </div>
-                `
+                    <p>Compra ${formatMoney(bbva.bid)}</p>
+                    <p>Venta ${formatMoney(bbva.ask)}</p>
+                </div>
 
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/banconacion.png' class='imgDolares'/>
+                        <h3>Nacion</h3>
+                    </div>
+                        <p>Compra ${formatMoney(bna.bid)}</p>
+                        <p>Venta ${formatMoney(bna.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancociudad.png' class='imgDolares'/>
+                        <h3>Ciudad</h3>
+                    </div>
+                        <p>Compra ${formatMoney(ciudad.bid)}</p>
+                        <p>Venta ${formatMoney(ciudad.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancobrubank.png' class='imgDolares'/>
+                        <h3>Brubank</h3>
+                    </div>    
+                        <p>Compra ${formatMoney(brubank.bid)}</p>
+                        <p>Venta ${formatMoney(brubank.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancogalicia.png' class='imgDolares'/>
+                        <h3>Galicia</h3>
+                    </div>
+                        <p>Compra ${formatMoney(galicia.bid)}</p>
+                        <p>Venta ${formatMoney(galicia.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancohipotecario.png' class='imgDolares'/>
+                        <h3>Hipotecario</h3>
+                    </div>
+                        <p>Compra ${formatMoney(hipotecario.bid)}</p>
+                        <p>Venta ${formatMoney(hipotecario.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancohsbc.png' class='imgDolares'/>
+                        <h3>HSBC</h3>
+                    </div>
+                        <p>Compra ${formatMoney(hsbc.bid)}</p>
+                        <p>Venta ${formatMoney(hsbc.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancoicbc.png' class='imgDolares'/>
+                        <h3>ICBC</h3>
+                    </div>
+                        <p>Compra ${formatMoney(icbc.bid)}</p>
+                        <p>Venta ${formatMoney(icbc.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancomacro.png' class='imgDolares'/>
+                        <h3>Macro</h3>
+                    </div>
+                        <p>Compra ${formatMoney(macro.bid)}</p>
+                        <p>Venta ${formatMoney(macro.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancosantander.png' class='imgDolares'/>
+                        <h3>Santander</h3>
+                    </div>
+                        <p>Compra ${formatMoney(santander.bid)}</p>
+                        <p>Venta ${formatMoney(santander.ask)}</p>
+                </div>
+
+                <div class="divDolares">
+                    <div class='dD-imgtxt'>
+                        <img src='../../src/assets/imgs/bancosupervielle.png' class='imgDolares'/>
+                        <h3>Supervielle</h3>
+                    </div>
+                        <p>Compra ${formatMoney(supervielle.bid)}</p>
+                        <p>Venta ${formatMoney(supervielle.ask)}</p>
+                </div>
+            </div>
+        `
+    
 }
 valorBancos();
+
 
 setInterval(() => {
     valorDolar();

@@ -5,79 +5,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../jsbt/bootstrap.min.js" defer></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    <script src="../../src/js/cotizaciones.js" defer></script>
 
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/css/index.css">
-    <link rel="stylesheet" href="../../src/css/investments.css">
+
+    <!-- En el head -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- Al final del body -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+
+
+    <script src="../../jsbt/bootstrap.min.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="../../src/js/cotizaciones.js" defer></script>
 
     <title>Document</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid" id="container-fluid-div-img">
-            <a href="#"><img src="../../src/assets/imgs/lending7.png" alt="Prestame"></a>
-        </div>
-        <div class="container-fluid" id="navBarHyperLinks">
-            <a class="navbar-brand navBarText" href="./home.html">Home</a>
-            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"                                   
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon navbar-button"></span>
+    <nav class="navbar navbar-expand-lg loan__navbar">
+        <div class="container-fluid">
+            <img src="../../src/assets/imgs/lending7.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-light"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="../../index.html">Simulador de Préstamos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="#">Cotizaciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="./contact.html">Contacto</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse loan__navbar-desplegable" id="navbarNavAltMarkup">
+                <div class="navbar-nav loan__navbar-desplegable_links">
+                    <a class="nav-link" href="./home.html">Home</a>
+                    <a class="nav-link" href="../../index.html">Simular Préstamo</a>
+                    <a class="nav-link" href="#">Cotizaciones</a>
+                    <a class="nav-link" href="./contact.html">Contacto</a>
+                </div>
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h1 class="dolarCotizaciones"> Dolar: Valores Promedio (Venta).</h1>
-        <div id="dolaresCotizaciones">
-            <div id="inputDolarBlue"></div>
-            <div id="inputDolar" class="container"></div>
-        </div>
-        <h2 class="dolarCotizaciones">Dolar Bancos.</h2>
-        <div class="container">
-            <div id="inputDolaresBancos">
 
+    <div class="loan__cotizaciones">
+
+        <div id="dolaresCotizaciones" class="loan__cotizaciones-dolares">
+            <div id="inputDolarBlue">
+                <!-- Va el valor del Dolar Blue -->
+            </div>
+            <div id="inputDolar">
+                <!-- Va el valor de los otros Dolares -->
+            </div>
+        </div>
+
+        <div class="loan__cotizaciones-dolares_bancos">
+            <h2>Cotización Dólares</h2>
+            <p>Accede a la cotización de todos los bancos con un click</p>
+            <div id="inputDolaresBancos" class="loan__cotizaciones-dolares_bancos-mostrar">
+                <!-- Aca van los dolares de los bancos -->
             </div>
         </div>
 
         <!-- Criptos -->
         <h2 class="dolarCotizaciones">Criptomonedas.</h2>
-            <p>Ingrese el ticker de la criptomoneda y presione 'Enter'.</p>
-            <p>Por ejemplo: 'btc'</p>
-            <div class="input-group mb-3 inputBuscar">
-                <div>
-                    <input type="text" class="form-control" id='inputCriptos' placeholder="Ingrese la criptomoneda a buscar." aria-label="Recipient's username"
+        <p>Ingrese el ticker de la criptomoneda y presione 'Enter'.</p>
+        <p>Por ejemplo: 'btc'</p>
+        <div class="input-group mb-3 inputBuscar">
+            <div>
+                <input type="text" class="form-control" id='inputCriptos'
+                    placeholder="Ingrese la criptomoneda a buscar." aria-label="Recipient's username"
                     aria-describedby="basic-addon2">
-                </div>
             </div>
+        </div>
         <div id="showCriptos" class="container"></div>
     </div>
-    <footer id="footerCotizaciones">
-        <div id="footerDiv">
-            <h2>PrestaMe - Queremos cumplir tus sueños.</h2>
+
+
+    <footer class="loan__index-footer">
+        <div class="loan__index-footer_logo">
+            <h3>PrestaMe - Queremos cumplir tus sueños.</h3>
             <a href="#">
                 <img src="../../src/assets/imgs/lending7.png" alt="">
             </a>
         </div>
-        <section>
-        </section>
-        <div id="fD-div">
+        <div>
             <p>
                 El otorgamiento del préstamo personal, se encuentra sujeto a calificación crediticia y condiciones de
                 contratación.
@@ -99,10 +105,6 @@
             </p>
         </div>
     </footer>
-
-
-
-
 </body>
 
 </html>

@@ -6,127 +6,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../jsbt/bootstrap.min.js" defer></script>
+    <script src="../../src/js/scrollreveal.js" defer></script>
+    <script src="../../src/js/home.js" defer></script>
 
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/css/index.css">
-    <link rel="stylesheet" href="../../src/css/home.css">
 
     <title>Document</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid" id="container-fluid-div-img">
-            <a href="#"><img src="../../src/assets/imgs/lending7.png" alt="Prestame"></a>
-        </div>
-        <div class="container-fluid" id="navBarHyperLinks">
-            <a class="navbar-brand navBarText" href="./home.html">Home</a>
-            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"                                   
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon navbar-button"></span>
+    <nav class="navbar navbar-expand-lg loan__navbar">
+        <div class="container-fluid">
+            <img src="../../src/assets/imgs/lending7.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-light"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="../../index.html">Simulador de Préstamos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="../html/cotizaciones.html">Cotizaciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="./contact.html">Contacto</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse loan__navbar-desplegable" id="navbarNavAltMarkup">
+                <div class="navbar-nav loan__navbar-desplegable_links">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="../../index.html">Loan Simulator</a>
+                    <a class="nav-link" href="./cotizaciones.html">Cotizaciones</a>
+                    <a class="nav-link" href="./contact.html">Contacto</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="boxBody container">
-        <div id="bB-homeDiv-A">
-            <section class="bB-hD-Section">
-                <h2>¿De qué tenes ganas?</h2>
-                <div></div>
+    <div class="loan__home">
+        <div class="loan__home-seccion">
+            <section>
+                <h2>De qué tenes ganas</h2>
                 <p>
-                    Todo eso que quieras o necesites, hacelo realidad con nosotros.
-                </p>
-                <p>
-                    En Presta-Me® te damos créditos para todo tipo de proyectos e ideas. Son rápidos, fáciles y 100% online. <strong>¡Y solo pedimos requisitos mínimos!</strong>
+                    Todo eso que queres o necesitas, hacelo realidad con nosotros.
+                    En Presta-Me® te damos créditos para todo tipo de proyectos e ideas. Son rápidos, fáciles y 100%
+                    online. <strong>¡Y solo pedimos requisitos mínimos!</strong>
                 </p>
             </section>
-            <section class="bB-hD-sImage">
+            <div>
+                <img src="../../src/assets/imgs/svg1.png" alt="">
+                <img src="../../src/assets/imgs/svg2.png" alt="">
+                <img src="../../src/assets/imgs/svg3.png" alt="">
+            </div>
+            <section>
                 <h3>Plataforma de consulta de cotizaciones Presta-Me®</h3>
                 <p>
                     Además de cumplir tus sueños, próximamente vamos a poder ofrecer apoyo y soluciones a tus finanzas.
                 </p>
-                <a href="../html/cotizaciones.html" target="_blank"><button class="btn btn-primary">Quiero conocer más</button></a> 
+                <a href="../html/cotizaciones.html" target="_blank"><button class="btn btn-primary">Quiero conocer
+                        más</button></a>
             </section>
         </div>
-    </div>
 
-    <div id="bB-homeDiv-C">
-        <div class="container">
-            <h3>Préstamos Personales al instante</h3>
-            <p>Te prestamos hasta $500.000 en el acto y en cuotas fijas.</p>
-            <div>
-                <button class="btn btn-primary" id="btn1-480-hD-C">
-                    <a href="../../index.html">Solicitar Prestamo</a>
-                </button>
-            </div>
-        </div>
         <div>
-            <img src="../../src/assets/imgs/lending6.jpg" alt="">
+            <div>
+                <h3>Préstamos Personales al instante</h3>
+                <p>Te prestamos hasta $500.000 en el acto y en cuotas fijas.</p>
+                <div>
+                    <button class="btn btn-primary" id="btn1-480-hD-C">
+                        <a href="../../index.html">Solicitar Prestamo</a>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <img src="../../src/assets/imgs/loan6.jpg" alt="">
+            </div>
+            <button class="btn btn-primary" id="btn2-480-hD-C">
+                <a href="../../index.html">Solicitar Prestamo</a>
+            </button>
         </div>
-        <button class="btn btn-primary" id="btn2-480-hD-C">
-            <a href="../../index.html">Solicitar Prestamo</a>
-        </button>
+
+        <div id="bB-homeDiv-B" class="container">
+            <section>
+                <h3>Quiénes nos avalan</h3>
+            </section>
+            <p>Trabajamos bajo las normativas de estos organismos:</p>
+            <div id="carouselHome">
+                <div class="cH-Section">
+                    <a href="https://www.argentina.gob.ar/cnv" target="_blank">
+                        <img id="cH-1" src="../../src/assets/imgs/loanCNV2.png" alt="">
+                    </a>
+                    <a href="https://cace.org.ar/" target="_blank">
+                        <img id="cH-2" src="../../src/assets/imgs/loanCNV3.png" alt="">
+                    </a>
+                </div>
+                <div class="cH-Section">
+                    <a href="https://www.iadb.org/es" target="_blank">
+                        <img id="cH-3" src="../../src/assets/imgs/loanCNV4.png" alt="">
+                    </a>
+                    <a href="https://www.ifc.org/wps/wcm/connect/multilingual_ext_content/ifc_external_corporate_site/home_es"
+                        target="_blank">
+                        <img id="cH-4" src="../../src/assets/imgs/loanCNV5.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="bB-homeDiv-B" class="container">
-        <section>
-            <h3>Quiénes nos avalan</h3>
-        </section>
-        <p>Trabajamos bajo las normativas de estos organismos:</p>
-        <div id="carouselHome">
-            <div class="cH-Section">
-                <a href="https://www.argentina.gob.ar/cnv" target="_blank">
-                    <img id="cH-1" src="../../src/assets/imgs/lendingCNV2.png" alt="">
-                </a>
-                <a href="https://cace.org.ar/" target="_blank">
-                    <img id="cH-2" src="../../src/assets/imgs/lendingCNV3.png" alt="">
-                </a>
-            </div>
-            <div class="cH-Section">
-                <a href="https://www.iadb.org/es" target="_blank">
-                    <img id="cH-3" src="../../src/assets/imgs/lendingCNV4.png" alt="">
-                </a>
-                <a href="https://www.ifc.org/wps/wcm/connect/multilingual_ext_content/ifc_external_corporate_site/home_es"
-                    target="_blank">
-                    <img id="cH-4" src="../../src/assets/imgs/lendingCNV5.png" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <footer class="footerResto">
-        <div id="footerDiv">
-            <h2>PrestaMe - Queremos cumplir tus sueños.</h2>
+
+    <footer class="loan__index-footer">
+        <div class="loan__index-footer_logo">
+            <h3>PrestaMe - Queremos cumplir tus sueños.</h3>
             <a href="#">
                 <img src="../../src/assets/imgs/lending7.png" alt="">
             </a>
         </div>
-        <section>
-        </section>
-        <div id="fD-div">
+        <div>
             <p>
                 El otorgamiento del préstamo personal, se encuentra sujeto a calificación crediticia y condiciones de
-                contratación. 
-                En caso de otorgarse el préstamo personal, el monto, plazo, tasa de interés y demás condiciones, serán establecidos por la entidad financiera elegida - en función del resultado que arroje la calificación crediticia efectuada sobre la base de sus políticas vigentes al momento del otorgamiento mismo.
-                Préstamos personales monto en pesos: máximo $500.000, mínimo $1.000. Plazo: máximo 36 meses, mínimo 3 meses.
+                contratación.
+                En caso de otorgarse el préstamo personal, el monto, plazo, tasa de interés y demás condiciones, serán
+                establecidos por la entidad financiera elegida - en función del resultado que arroje la calificación
+                crediticia efectuada sobre la base de sus políticas vigentes al momento del otorgamiento mismo.
+                Préstamos personales monto en pesos: máximo $500.000, mínimo $1.000. Plazo: máximo 36 meses, mínimo 3
+                meses.
 
                 Ejemplo. Para un préstamo de $200.000 en 36 meses: Tasa Nominal Anual fija (88.8%), Tasa Efectiva Anual
-                fija (192.47%). Costo Financiero Total Nominal Anual: 112.19%. 
-                Ejemplo. Para un préstamo de $5.000 a 90 días con TNA de 88.8% el cliente devolverá $5949.21. Tasa Máxima Efectiva Anual: 192.47%. Tasa Mínima
+                fija (192.47%). Costo Financiero Total Nominal Anual: 112.19%.
+                Ejemplo. Para un préstamo de $5.000 a 90 días con TNA de 88.8% el cliente devolverá $5949.21. Tasa
+                Máxima Efectiva Anual: 192.47%. Tasa Mínima
                 Efectiva Anual: 25%.
                 Todos los costos aquí detallados son solamente a título informativo, no constituyen una oferta y pueden
                 variar al momento de solicitarlos, sin previo aviso. Asimismo, están sujetos a políticas de mercado y/o
@@ -136,4 +135,5 @@
         </div>
     </footer>
 </body>
+
 </html>

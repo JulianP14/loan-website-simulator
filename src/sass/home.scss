@@ -1,4 +1,10 @@
+@import url('../css/variables.css');
+
 @media (min-width:370px) {
+
+    body{
+        background: #000830;
+    }
 
     /* RESPONSIVE NAVBAR */
     #navbar {
@@ -31,10 +37,6 @@
         padding: 1rem;
         width: 70%;
         text-align: left;
-
-        h1 {
-            color: #faf4f4
-        };
     };
 
     #container-fluid-div-img {
@@ -68,20 +70,21 @@
     /* RESPONSIVE BODY */
 
     .boxBody {
-        background-color: #faf4f4;
+        background-color: #000830;
     }
+
 
     #bB-homeDiv-A {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #faf4f4;
+        background: #000830;
         padding: 2rem 1rem;
-
+        margin: 0;
         h2 {
             text-align: center;
             padding: 1rem;
-            color: #274980;
+            color: #fff;
             text-transform: uppercase;
             font-size: 3rem;
             font-weight: 650;
@@ -92,10 +95,11 @@
             padding: 0 .5rem;
             font-weight: 450;
             font-size: 1.5rem;
+            color: #fff;
         }
 
         section {
-            background-color: #faf4f4;
+            background-color: #000830;
             width: 100%;
         }
 
