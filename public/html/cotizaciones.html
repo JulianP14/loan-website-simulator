@@ -8,13 +8,16 @@
 
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/css/index.css">
+    <link rel="stylesheet" href="../../src/css/swiper.css">
 
     <!-- En el head -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- Al final del body -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../../src/js/swiper.js" defer></script>
 
     <script src="../../jsbt/bootstrap.min.js" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
@@ -22,8 +25,6 @@
 
     <title>Document</title>
 </head>
-
-<body>
     <nav class="navbar navbar-expand-lg loan__navbar">
         <div class="container-fluid">
             <img src="../../src/assets/imgs/lending7.png" alt="">
@@ -53,27 +54,204 @@
             </div>
         </div>
 
+        <!-- TODO SWIPER -->
+
         <div class="loan__cotizaciones-dolares_bancos">
-            <h2>Cotización Dólares</h2>
-            <p>Accede a la cotización de todos los bancos con un click</p>
-            <div id="inputDolaresBancos" class="loan__cotizaciones-dolares_bancos-mostrar">
-                <!-- Aca van los dolares de los bancos -->
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper swiper__container">
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancobbva.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="bbva">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancobrubank.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="brubank">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancociudad.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="ciudad">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancogalicia.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancohipotecario.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancohsbc.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancoicbc.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancomacro.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/banconacion.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancoprov.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancosantander.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-slide_img">
+                            <img src="../../src/assets/imgs/bancosupervielle.png" alt="">
+                        </div>
+                        <div class="card-description">
+                            <div class="card-title">
+                                <h4>Precios:</h4>
+                            </div>
+                            <div class="card-text inputValoresDolar" data-bank="galicia">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
+        <!-- TODO SWIPER -->
+
         <!-- Criptos -->
-        <h2 class="dolarCotizaciones">Criptomonedas.</h2>
-        <p>Ingrese el ticker de la criptomoneda y presione 'Enter'.</p>
-        <p>Por ejemplo: 'btc'</p>
-        <div class="input-group mb-3 inputBuscar">
-            <div>
+        <div class="loan__cotizaciones-criptomonedas">
+            <h2 class="dolarCotizaciones">Criptomonedas</h2>
+            <p>Ingrese el ticker de la criptomoneda.</p>
+            <h3>Por ejemplo: 'btc'</h3>
+            <div class="input-group mb-3 loan__cotizaciones-criptomonedas_input">
                 <input type="text" class="form-control" id='inputCriptos'
                     placeholder="Ingrese la criptomoneda a buscar." aria-label="Recipient's username"
                     aria-describedby="basic-addon2">
             </div>
+            <div id="showCriptos" class="loan__cotizaciones-criptomonedas_mostrar">
+
+            </div>
         </div>
-        <div id="showCriptos" class="container"></div>
+
     </div>
+
+
 
 
     <footer class="loan__index-footer">
@@ -105,6 +283,6 @@
             </p>
         </div>
     </footer>
-</body>
+    </body>
 
 </html>
