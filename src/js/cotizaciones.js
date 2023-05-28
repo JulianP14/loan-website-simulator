@@ -1,6 +1,7 @@
 const inputDolar = document.getElementById('inputDolar');
 const inputDolarBlue = document.getElementById('inputDolarBlue');
 const inputCriptos = document.getElementById('inputCriptos');
+const searchCriptos = document.getElementById('searchCriptos');
 const inputButtonCriptos = document.getElementById('inputButtonCriptos');
 const footer = document.getElementById('footer');
 const inputValoresDolar = document.querySelectorAll('div.inputValoresDolar');
@@ -23,40 +24,37 @@ const readData = async (url) => {
     }
 };
 
-inputCriptos.addEventListener('keydown', async (e) => {
-    if (e.key === 'Enter') {
-        let coin = inputCriptos.value;
-        try {
-            const data = await readData(`https://criptoya.com/api/${coin}/ars/1`);
-            showCriptos.innerHTML = 
+searchCriptos.addEventListener('click', async () => {
+    let coin = inputCriptos.value;
+    try {
+        const data = await readData(`https://criptoya.com/api/${coin}/ars/1`);
+        showCriptos.innerHTML =
             `
                 <div class='brokersCard loan__cotizaciones-criptomonedas_mostrar-ventanas'>
                     ${Object.entries(data)
-                        .filter(([key, value]) => key !== 'buda')
-                        .map(([key, value]) => `
+                .filter(([key, value]) => key !== 'buda')
+                .map(([key, value]) => `
                         <div class="col-md-6 col-lg-4 loan__cotizaciones-criptomonedas_mostrar-section">
-                            <div class="card mb-4 shadow-sm brokers">
                             <div class="card-body">
                                 <h3 class="card-title">${key.toUpperCase()}</h3>
                                 <ul class="list-unstyled">
                                 <li>Venta:</li>
-                                <li>${new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(value.ask)}</li>
+                                <li>${new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(parseInt(value.ask))}</li>
                                 </ul>
-                            </div>
                             </div>
                         </div>
                         `).join('')}
                 </div>
             `;
-        } catch (error) {
-            await Swal.fire({
-                title: "Info",
-                text: "La criptomoneda buscada no cotiza dentro de ninguno de los brokers.",
-                icon: "info",
-                confirmButtonText: "Ok"
-            })
-        }
+    } catch (error) {
+        await Swal.fire({
+            title: "Info",
+            text: "La criptomoneda buscada no cotiza dentro de ninguno de los brokers.",
+            icon: "info",
+            confirmButtonText: "Ok"
+        })
     }
+
 })
 
 const valorDolar = async () => {

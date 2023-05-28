@@ -4,7 +4,7 @@ const swiper = new Swiper('.swiper-container', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
     },
-    slidesPerView: 6,
+    slidesPerView: 1,
     spaceBetween: 10,
     // init: false,
     pagination: {
