@@ -1,0 +1,114 @@
+@media (min-width:370px) {
+
+    .loan__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loan__contact-seccion_inicial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .loan__contact-seccion_inicial h2, h3 {
+        margin-bottom: 2rem;
+    }
+
+    .loan__contact-form {
+        width: 30rem;
+    }
+
+    .loan__contact-form div {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 2rem 0;
+        border-radius: 2rem;
+    }
+
+    .loan__contact-form svg {
+        background: #fff;
+        width: 4rem;
+        height: 3.5rem;
+        margin-right: 1rem;
+        padding: .5rem;
+        border-radius: 52rem;
+    }
+
+    .loan__contact-form input {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .loan__contact-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .loan__contact-button button {
+        background: #fff;
+        color: #000830;
+        border-radius: 2rem;
+        padding: .5rem 3rem;
+    }
+
+    /* FOOTER */
+    .loan__contact-footer {
+        border-top: .1rem solid #868686;
+        position: sticky;
+        padding-top: .5rem;
+    }
+
+    .loan__contact-footer_logo {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: .5rem;
+    }
+
+    .loan__contact-footer_logo a {
+        width: max-content;
+        margin-right: 1rem;
+    }
+
+    .loan__contact-footer_logo img {
+        width: 4rem;
+    }
+
+    .loan__contact-footer p {
+        font-size: .9rem;
+        padding: 0 1rem;
+        color: #545454;
+    }
+
+}
+
+@media(min-width:410px) {
+    .loan__contact-footer {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+@media (min-width:680px) {
+    .loan__contact-form {
+        width: 45rem;
+    }
+
+    .loan__contact-button {
+        margin: 2rem 0;
+    }
+}
+
+@media (min-width:1200px) {
+    .loan__contact-form {
+        width: 55rem;
+    }
+}
