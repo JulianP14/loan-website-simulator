@@ -1,17 +1,19 @@
-/* const scroll = ScrollReveal();
-    scroll.reveal('.lending__home-seccion', {
-        duration: 3000,
-        origin: 'top',
-        distance: '-100px'
-    });
-    scroll.reveal('.caca', {
-        duration: 3000,
-        origin: 'left',
-        distance: '-100px'
-    });
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show')
+        };
 
-    scroll.reveal('.navbar', {
-        duration: 3000,
-        origin: 'bottom',
-        distance: '-100px'
-    }) */
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+hiddenElements.forEach((element) => {
+    observer.observe(element);
+})
+
+

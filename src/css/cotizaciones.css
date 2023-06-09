@@ -15,10 +15,11 @@
         box-shadow: .5rem .5rem 1.5rem #3d3d3d;
         border-bottom: .1rem solid white;
         border-top: .1rem solid white;
-
     }
 
-    .loan__cotizaciones-dolares div {
+
+    .loan__cotizaciones-dolares_otrosDolares
+    .loan__cotizaciones-dolares_dolarBlue {
         width: 33rem;
         display: flex;
         flex-direction: column;
@@ -29,12 +30,17 @@
 
     .loan__cotizaciones-dolares h3 {
         font-size: 2rem;
-        padding: .6rem 1.5rem;
+        padding: .3rem 1.5rem;
         border-radius: 2rem;
-        color: #000830;
+        color: #fff;
         font-weight: 600;
-        background: #fff;
         text-align: center;
+    }
+
+    .loan__cotizaciones-dolares_dolarBlue h3 {
+        background: #fff;
+        color: #000830;
+        padding: .5rem 2rem;
     }
 
     .loan__cotizaciones-dolares h4 {
@@ -48,42 +54,74 @@
         text-align: center;
     }
 
-    .loan__cotizaciones-dolares section {
-        text-align: center;
+    /* .loan__cotizaciones-dolares_otrosDolares {
         box-shadow: .5rem .5rem 1.5rem #3d3d3d;
-        border-bottom: .1rem solid #fff;
-        border-radius: 2rem;
-        margin-bottom: 2rem;
+        border-bottom: .1rem solid white;
+        border-top: .1rem solid white;
+    } */
+
+    .loan__cotizaciones-dolares_otrosDolares {
+        width: 40rem;
     }
 
-    .loan__cotizaciones-dolares_blue {
-        width: 100%;
+    .loan__cotizaciones-dolares_otrosDolares section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: .5rem .5rem 1.5rem #3d3d3d;
+        border-top: .1rem solid #fff;
+        border-radius: 2rem;
+        margin: 2rem 5rem;
+    }
+
+    .loan__cotizaciones-dolares_otrosDolares h3 {
+        margin: 1rem;
+    }
+
+    .loan__cotizaciones-dolares_dolarBlue {
+        width: 35rem;
         margin: 2rem 0;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        border-radius: 2rem;
+        padding: 1rem;
     }
 
-    .loan__cotizaciones-dolares_blue section {
+    .loan__cotizaciones-dolares_dolarBlue h3 {
+        margin-bottom: 1rem;
+    }
+
+
+
+    .loan__cotizaciones-dolares_dolarBlue section {
         box-shadow: none;
         border-bottom: none;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
+        padding: 3rem;  
+        width: 100%;
+        
     }
 
-    .loan__cotizaciones-dolares_blue div {
+    .loan__cotizaciones-dolares_dolarBlue div {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: auto;
     }
 
-    .loan__cotizaciones-dolares_blue h5 {
+    .loan__cotizaciones-dolares_dolarBlue h5 {
         color: #fff;
     }
 
-    .loan__cotizaciones-dolares_bancos {
+    
+
+
+    /* .loan__cotizaciones-dolares_bancos {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -91,6 +129,12 @@
         overflow-x: hidden;
         box-shadow: .5rem .5rem 1.5rem #3d3d3d;
         border-radius: 3rem;
+    } */
+
+    .loan__cotizaciones-criptomonedas_contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .loan__cotizaciones-criptomonedas {
@@ -102,7 +146,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 3rem;
-        width: 50rem;
+        width: 32rem;
     }
 
     .loan__cotizaciones-criptomonedas h2 {
@@ -130,7 +174,7 @@
 
     .loan__cotizaciones-criptomonedas_input input {
         border-radius: 2rem;
-        width: fit-content;
+        width: 20rem;
         padding: 0 1rem;
     }
 
@@ -184,6 +228,13 @@
         font-size: 1.5rem;
     }
 
+    .loan__cotizaciones-criptomonedas_mostrar-section div {
+        display: grid;
+        grid-template-columns: 33% 66%;
+        justify-content: center;
+        align-items: center;
+        align-content: space-between;
+    }
 
     .loan__cotizaciones-criptomonedas_mostrar div {
         border-radius: 2rem;
@@ -191,6 +242,8 @@
         background: #000830;
         color: #fff;
         text-align: center;
+        width: 100%;
+        padding: .5rem .2rem;
     }
 
     .loan__cotizaciones-criptomonedas_mostrar-ventanas {
@@ -198,39 +251,96 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        padding-bottom: 4rem !important;
-        border-bottom: 1px solid white;
+        align-items: flex-start;
     }
+    
+    .loan__cotizaciones-criptomonedas_mostrar-ventanas ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        padding-right: 4rem;
+        margin: 0;
+    }
+
+    .loan__cotizaciones-criptomonedas_mostrar-ventanas li {
+        width: 6rem;
+        font-size: 1.2rem;
+    }
+
+    .loan__cotizaciones-criptomonedas_mostrar-ventanas section {
+        display: flex;
+    }
+
+    .loan__cotizaciones-criptomonedas_mostrar-ventanas h3 {
+        font-size: 1.3rem;
+        text-transform: capitalize;
+        text-align: left;
+        margin-left: .5rem;
+    }
+
 }
 
 @media(min-width: 680px) {
-    .loan__cotizaciones-dolares div {
+
+    .loan__cotizaciones-dolares_dolarBlue {
+        display: flex;
+        flex-direction: column;
         width: 45rem;
+        padding: 3rem 0;
     }
 
-    .loan__cotizaciones-dolares section {
+    .loan__cotizaciones-dolares_blue {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: baseline;
+        flex-direction: column;
+        align-items: center;
         width: 40rem;
     }
 
-    #inputDolar section {
-        padding: 0 2rem 0 0;
+    .loan__cotizaciones-dolares_otrosDolares {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 60rem;
+        margin: 1rem 0;
+
     }
 
-    #inputDolar h3 {
-        padding: 1.5rem;
+    .loan__cotizaciones-dolares_otrosDolares section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2rem 7rem;
+        padding: 1rem 0;
+    }
+
+    /* .loan__cotizaciones-dolares section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 40rem;
+    } */
+    
+    .loan__cotizaciones-dolares_otrosDolares h3 {
+        padding: .5rem;
         width: 20rem;
         margin: 0;
     }
 
-    .loan__cotizaciones-criptomonedas-contenedor {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .loan__cotizaciones-dolares_otrosDolares p {
+        margin: 0 2rem 0 0;
+    }
 
+    .loan__cotizaciones-criptomonedas {
+        width: 46rem;
+    }
+
+    .loan__cotizaciones-criptomonedas_input input {
+        width: 25rem;
     }
 
 }
@@ -250,7 +360,7 @@
 }
 
 @media(min-width: 1200px) {
-    .loan__cotizaciones-criptomonedas {
-        width: 60rem;
-    }
+    
+
+
 }

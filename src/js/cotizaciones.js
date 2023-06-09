@@ -37,10 +37,12 @@ searchCriptos.addEventListener('click', async () => {
                         <div class="col-md-6 col-lg-4 loan__cotizaciones-criptomonedas_mostrar-section">
                             <div class="card-body">
                                 <h3 class="card-title">${key.toUpperCase()}</h3>
-                                <ul class="list-unstyled">
-                                <li>Venta:</li>
-                                <li>${new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(parseInt(value.ask))}</li>
-                                </ul>
+                                <section> 
+                                    <ul class="list-unstyled">
+                                        <li>Venta:</li>
+                                        <li>${new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(parseInt(value.ask))}</li>
+                                    </ul>
+                                </section>
                             </div>
                         </div>
                         `).join('')}
@@ -117,18 +119,16 @@ const valorDolarBlue = async () => {
     inputDolarBlue.innerHTML =
         `
                 <h3>Dolar Blue</h3>
-                <span class="loan__cotizaciones-dolares_blue">
-                    <section>
-                        <div>
-                            <h5>Compra</h5>
-                            <p>${formatMoney(blue_bid)}</p>
-                        </div>
-                        <div>   
-                            <h5>Venta</h5>
-                            <p>${formatMoney(blue)}</p>
-                        </div>
-                    </section>
-                </span>
+                <section class="loan__cotizaciones-dolares_blue">
+                    <div>
+                        <h5>Compra</h5>
+                        <p>${formatMoney(blue_bid)}</p>
+                    </div>
+                    <div>   
+                        <h5>Venta</h5>
+                        <p>${formatMoney(blue)}</p>
+                    </div>
+                </section>
                 <h4>
                     El precio se actualiza minuto a minuto (mientras el mercado esté operando).
                 </h4>

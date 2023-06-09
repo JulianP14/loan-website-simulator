@@ -17,29 +17,23 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid" id="container-fluid-div-img">
-            <a href="#"><img src="../../src/assets/imgs/lending7.png" alt="Prestame"></a>
-        </div>
-        <div class="container-fluid" id="navBarHyperLinks">
-            <a class="navbar-brand navBarText" href="./home.html">Home</a>
-            <button class="navbar-toggler navbar-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon navbar-button"></span>
+    <nav class="navbar navbar-expand-lg loan__navbar">
+        <div class="container-fluid">
+            <section>
+                <img src="../../src/assets/imgs/logodollar.png" alt="logo">
+                <h2>Presta-Me</h2>
+            </section>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-light"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="../../index.html">Simulador de Préstamos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="../html/cotizaciones.html">Cotizaciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navBarText" href="#">Contacto</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse loan__navbar-desplegable" id="navbarNavAltMarkup">
+                <div class="navbar-nav loan__navbar-desplegable_links">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="../../index.html">Loan Simulator</a>
+                    <a class="nav-link" href="./cotizaciones.html">Cotizaciones</a>
+                    <a class="nav-link" href="./contact.html">Contacto</a>
+                </div>
             </div>
         </div>
     </nav>

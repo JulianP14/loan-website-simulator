@@ -1,10 +1,104 @@
 @import url('./variables.css');
 
+/* URL https://coolors.co/palette/000830-1f0426-3d001c-2f0a36-1f0d3a-181247-001958 */
 @media (min-width:370px) {
-    .loan__home {
-        border: 1px solid white;
+
+
+    /*
+        . Descomentar para ver secciones separadas por curvas 
+        . No borro por (posibles) futuras implementaciones
+    */
+    /* .spacer {
+            aspect-ratio: 960/300;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        } 
+
+    .layer1 {
+            background-image: url('../../src/css/separador2.svg');
+            max-height: 5rem;
+        }
+        
+    .curve1 {
+            background: #1f0426;
+        }
+
+    .layer2 {
+            background-image: url('../../src/css/separador3.svg');
+            max-height: 5rem;
+        } 
+    .curve2 {
+            background: #3d001c;
+        } 
+
+    .layer3 {
+            background-image: url('../../src/css/separador4.svg');
+            max-height: 5rem;
+        } 
+    .curve3 {
+            background: #1f0d3a;
+        } 
+
+    .layer4 {
+            background-image: url('../../src/css/separador5.svg');
+            max-height: 5rem;
+        } 
+    .curve4 {
+            background: #181247;
+        } 
+
+    .layer5 {
+            background-image: url(../../src/css/separador6.svg);
+            max-height: 5rem;
+        } 
+    .curve5 {
+            background: #001958;
+        } 
+
+    .layer6 {
+            background-image: url('../../src/css/separador7.svg');
+            max-height: 5rem;
+        }  */
+
+    
+        /* . Diseño de la estructura del home y animaciones {
+            grid: 'organiza',
+            place y align: 'centra',
+        } */
+
+    .scrollView {
+        display: grid;
+        place-items: center;
+        align-items: center;
+        min-height: 100vh;
     }
 
+
+    .hidden {
+        opacity: 0;
+        filter: blur(.5rem);
+        transform: translateX(-100%);
+        transition: all 1s ease;
+    }
+
+    @media(prefers-reduced-motion) {
+        .hidden {
+            transition: none;
+        }
+    }
+
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+
+    /* 
+        Estilos generales 
+    */
     .loan__home-seccion {
         display: flex;
         flex-direction: column;
@@ -14,23 +108,182 @@
 
     .loan__home-seccion section {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 5rem 3rem;
+        /* display: flex;
+        flex-direction: column; */
+        padding: 1rem 3rem;
         text-align: justify;
     }
 
     .loan__home-seccion h2 {
-        font-size: 4rem;
-        text-transform: uppercase;
-        background-image: linear-gradient(to right, #d400ff, #02d5fa);
+        /* background-image: linear-gradient(to right, #d400ff, #02d5fa);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 600;
+        -webkit-text-fill-color: transparent; */
+        color: #fff;
         text-align: center;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        text-transform: uppercase;
     }
 
     .loan__home-seccion p {
+        color: #8f8f8f;
+        text-align: center;
+    }
+
+    .loan__home-seccion p:last-of-type {
+        color: #fff;
+        
+    }
+
+    .loan__home-seccion div {
+        /* display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;*/
+        width: 100%;
+        padding: 1rem 3rem;
+        overflow: hidden;
+    }
+
+    .loan__home-seccion img {
+        width: 30rem;
+        margin-bottom: 7rem;
+    }
+
+    .loan__home-seccion button {
+        background: #001958;
+        padding: 1rem 2rem;
+        border: .1rem solid #fff;
+        border-radius: 2rem;
+        color: #fff;
+        transition: all .5s ease;
+        font-size: 1.5rem;
+        box-shadow: 0rem 0rem 1.5rem .1rem #7c7c7c;
+    }
+
+    .loan__home-seccion button:hover {
+        background: #3d001c;
+        font-size: 1.8rem;
+    }
+
+
+    .loan__home-seccion_prestamos {
+        /* display: flex;
+        flex-direction: column; 
+        align-items: center; */
+        padding: 1rem;
+    }
+
+    .loan__home-seccion_prestamos p {
+        font-size: 1.5rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    .loan__home-seccion_prestamos img {
+        width: 30rem;
+    }
+
+
+    .loan__home-seccion_prestamos button {
+        background: #001958;
+        padding: 1rem 2rem;
+        border: .1rem solid #fff;
+        border-radius: 2rem;
+        color: #fff;
+        transition: all .5s ease;
+        font-size: 1.5rem;
+        transition: all .5s ease;
+        box-shadow: 0rem 0rem 1.5rem .1rem #7c7c7c;
+
+    }
+
+    .loan__home-seccion_prestamos button:hover {
+        background: #3d001c;
+        font-size: 1.8rem;
+
+    }
+
+    .loan__home-seccion_prestamos div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .loan__home-seccion_prestamos a {
+        text-decoration: none;
         color: #fff;
     }
+
+    .loan__home-h2_general {
+        font-size: 3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .loan__home-h3_general {
+        text-align: center;
+        color: #8f8f8f;
+        font-size: 1.5rem;
+        font-weight: 550;
+        padding: 0 2rem;
+    }
+
+    .loan__home-aval section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loan__home-aval section img {
+        margin-top: 2rem;
+        width: 30rem;
+    }
+
+    .loan__home-aval-imgs {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .loan__home-aval-imgs img {
+        width: 20rem;
+        margin: 1rem 2rem;
+    }
+
+    /* .loan__home-aval-imgs img:last-of-type {
+        width: 20rem;
+    } */
+
+}
+
+@media (min-width:780px) {
+
+    .loan__home {
+        padding: 3rem 5rem;
+    }
+    
+    .loan__home-seccion img {
+        width: 50rem;
+    }
+
+    .loan__home-seccion_prestamos img {
+        width: 40rem;
+    }
+
+    .loan__home-h2_general {
+        font-size: 3.5rem;
+    }
+
+    .loan__home-h3_general {
+        font-size: 2.2rem;
+    }
+
+    .loan__home-seccion p {
+        font-size: 2.2rem;
+    }
+        
 }

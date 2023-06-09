@@ -6,19 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../jsbt/bootstrap.min.js" defer></script>
-    <script src="../../src/js/scrollreveal.js" defer></script>
     <script src="../../src/js/home.js" defer></script>
 
     <link rel="stylesheet" href="../../cssbt/bootstrap.min.css">
     <link rel="stylesheet" href="../../src/css/index.css">
 
-    <title>Document</title>
+    <title>Presta-Me®</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg loan__navbar">
         <div class="container-fluid">
-            <img src="../../src/assets/imgs/lending7.png" alt="">
+            <section>
+                <img src="../../src/assets/imgs/logodollar.png" alt="logo">
+                <h2>Presta-Me</h2>
+            </section>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon navbar-light"></span>
@@ -34,82 +36,83 @@
         </div>
     </nav>
 
+    <!-- <div class="spacer layer1"></div> -->
+
     <div class="loan__home">
         <div class="loan__home-seccion">
-            <section>
-                <h2>De qué tenes ganas</h2>
+            <section class="curve1 scrollView hidden">
+                <h2 class="loan__home-h2_general">De qué tenes ganas</h2>
                 <p>
                     Todo eso que queres o necesitas, hacelo realidad con nosotros.
                     En Presta-Me® te damos créditos para todo tipo de proyectos e ideas. Son rápidos, fáciles y 100%
-                    online. <strong>¡Y solo pedimos requisitos mínimos!</strong>
+                    online.
                 </p>
-            </section>
-            <div>
-                <img src="../../src/assets/imgs/svg1.png" alt="">
-                <img src="../../src/assets/imgs/svg2.png" alt="">
-                <img src="../../src/assets/imgs/svg3.png" alt="">
-            </div>
-            <section>
-                <h3>Plataforma de consulta de cotizaciones Presta-Me®</h3>
                 <p>
-                    Además de cumplir tus sueños, próximamente vamos a poder ofrecer apoyo y soluciones a tus finanzas.
+                    <strong>¡Y solo pedimos requisitos mínimos!</strong>
                 </p>
-                <a href="../html/cotizaciones.html" target="_blank"><button class="btn btn-primary">Quiero conocer
-                        más</button></a>
+                <img src="../../src/assets/imgs/svg2.png" alt="">
             </section>
-        </div>
 
-        <div>
-            <div>
-                <h3>Préstamos Personales al instante</h3>
-                <p>Te prestamos hasta $500.000 en el acto y en cuotas fijas.</p>
-                <div>
-                    <button class="btn btn-primary" id="btn1-480-hD-C">
-                        <a href="../../index.html">Solicitar Prestamo</a>
+            <!-- <div class="spacer layer2"></div> -->
+
+            <!-- <div class="spacer layer3"></div> -->
+
+            <section class="curve3 scrollView hidden">
+                <h2 class="loan__home-h2_general">Plataforma de cotizaciones</h2>
+                <h3 class="loan__home-h3_general">
+                    Además de cumplir tus sueños, próximamente vamos a poder ofrecer apoyo y soluciones a tus finanzas.
+                </h3>
+                <img src="../../src/assets/imgs/svg3.png" alt="">
+                <a href="../html/cotizaciones.html" target="_blank">
+                    <button>
+                        Quiero saber más
                     </button>
-                </div>
-            </div>
-            <div>
-                <img src="../../src/assets/imgs/loan6.jpg" alt="">
-            </div>
-            <button class="btn btn-primary" id="btn2-480-hD-C">
-                <a href="../../index.html">Solicitar Prestamo</a>
-            </button>
+                </a>
+            </section>
+
         </div>
 
-        <div id="bB-homeDiv-B" class="container">
-            <section>
-                <h3>Quiénes nos avalan</h3>
-            </section>
-            <p>Trabajamos bajo las normativas de estos organismos:</p>
-            <div id="carouselHome">
-                <div class="cH-Section">
-                    <a href="https://www.argentina.gob.ar/cnv" target="_blank">
-                        <img id="cH-1" src="../../src/assets/imgs/loanCNV2.png" alt="">
-                    </a>
-                    <a href="https://cace.org.ar/" target="_blank">
-                        <img id="cH-2" src="../../src/assets/imgs/loanCNV3.png" alt="">
-                    </a>
-                </div>
-                <div class="cH-Section">
-                    <a href="https://www.iadb.org/es" target="_blank">
-                        <img id="cH-3" src="../../src/assets/imgs/loanCNV4.png" alt="">
-                    </a>
-                    <a href="https://www.ifc.org/wps/wcm/connect/multilingual_ext_content/ifc_external_corporate_site/home_es"
-                        target="_blank">
-                        <img id="cH-4" src="../../src/assets/imgs/loanCNV5.png" alt="">
-                    </a>
-                </div>
+        <!-- <div class="spacer layer4"></div> -->
+
+        <div class="loan__home-seccion_prestamos curve4 scrollView hidden">
+            <div>
+                <h2 class="loan__home-h2_general">Préstamos Personales al instante</h2>
+            </div>
+            <h3 class="loan__home-h3_general">Te prestamos hasta $500.000 en el acto y en cuotas fijas.</h3>
+
+            <div>
+                <img src="../../src/assets/imgs/lend-dollar.png" alt="">
+            </div>
+
+            <div>
+                <button>
+                    <a href="../../index.html">Simular Prestamo</a>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- <div class="spacer layer5"></div> -->
+
+        <div class="loan__home-aval curve5 scrollView hidden">
+            <h2 class="loan__home-h2_general">Quiénes nos avalan</h2>
+            <h3 class="loan__home-h3_general">Trabajamos bajo las normativas de estos organismos:</h3>
+            <div class="loan__home-aval-imgs">
+                <img src="../../src/assets/imgs/lendingCNV2.png" alt="">
+                <img src="../../src/assets/imgs/lendingCNV3.png" alt="">
+                <img src="../../src/assets/imgs/lendingCNV4.png" alt="">
+                <img src="../../src/assets/imgs/lendingCNV5.png" alt="">
             </div>
         </div>
     </div>
 
+    <!-- <div class="spacer layer6"></div> -->
 
     <footer class="loan__index-footer">
         <div class="loan__index-footer_logo">
             <h3>PrestaMe - Queremos cumplir tus sueños.</h3>
             <a href="#">
-                <img src="../../src/assets/imgs/lending7.png" alt="">
+                <img src="../../src/assets/imgs/logodollar.png" alt="">
             </a>
         </div>
         <div>
