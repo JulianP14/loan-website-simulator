@@ -1,10 +1,10 @@
 $(document).ready(function () {
     let today = new Date();
-    let maxYear = today.getFullYear() - 18;
+    let maxYear = today.getFullYear() - 19;
     $("#inputDob").datepicker({
         dateFormat: "dd/mm/yy",
         changeYear: true,
-        yearRange: "-100:" + maxYear
+        yearRange: "-75:" + maxYear
     });
 });
 
@@ -27,13 +27,11 @@ inputSubmit.addEventListener("click", (event) => {
 });
 
 
-// *Trying to improve the functionality from above
 let bankEntity = inputBank.forEach(inputBank => {
     inputBank.addEventListener("click", (e) => {
         e.preventDefault();
         const bankE = inputBank.innerText;
-        bankEntity == bankE;
-        console.log(bankE)
+        bankEntity = bankE;
     })
 })
 
@@ -41,8 +39,7 @@ let employmentStatus = inputEmployment.forEach(inputEmployment => {
     inputEmployment.addEventListener("click", (e) => {
         e.preventDefault();
         const employStatus = inputEmployment.innerText;
-        employmentStatus == employStatus;
-        console.log(employStatus)
+        employmentStatus = employStatus;
     })
 })
 
@@ -51,8 +48,6 @@ inputAmount.addEventListener("change", () => {
     if (inputAmount.value > 500000) {
         let valorDef = 500000
         inputAmount.value = valorDef;
-
-
     }
     if (inputAmount.value < 1000) {
         let valorDef = 1000
@@ -60,7 +55,7 @@ inputAmount.addEventListener("change", () => {
     }
 })
 
-//CBU data required + Checking variables (painting the border of red if cbu is string or isNaN, and if the length is below 22 or above 22)
+// *CBU data required + Checking variables (painting the border of red if cbu is 'string' or 'isNaN', and if the length is < 22 or > 22)
 inputCbu.addEventListener("blur", () => {
     let inputCbuNum = Number(inputCbu.value);
     let validarCbu = !isNaN(inputCbuNum) && inputCbuNum.toString().length === 22;
@@ -69,7 +64,7 @@ inputCbu.addEventListener("blur", () => {
     inputCbu.placeholder = validarCbu ? '' : 'Ingrese un CBU correcto (22 números)';
 })
 
-//Erase inputs after submit 
+// *Erase inputs after submit 
 const clearInputs = () => {
     [
         inputName,
@@ -83,27 +78,27 @@ const clearInputs = () => {
 
 }
 
-//Add user data to an [] of {} with a constructor {} and store it in localStorage
+// *Add user's data to an [] of {} with a constructor{} and save it in localStorage
 class Users {
     constructor(name, lastName, employment, dni, email, phone, amount, cbu, bank) {
         this.name = name,
-            this.lastName = lastName,
-            this.employment = employment,
-            this.dni = dni,
-            this.email = email,
-            this.phone = phone,
-            this.amount = amount,
-            this.cbu = cbu,
-            this.bank = bank
+        this.lastName = lastName,
+        this.employment = employment,
+        this.dni = dni,
+        this.email = email,
+        this.phone = phone,
+        this.amount = amount,
+        this.cbu = cbu,
+        this.bank = bank
     };
 };
 const addUser = () => {
-    allUsers.push(new Users(inputName.value, inputLastName.value, employmentStatus, inputDni, inputEmail.value, inputPhone.value, inputAmount.value, inputCbu.value, bankEntity))
+    allUsers.push(new Users(inputName.value, inputLastName.value, employmentStatus, inputDni, inputEmail.value, inputPhone.value, inputAmount.value, inputCbu.value, bankEntity));
     localStorage.setItem("Usuario", JSON.stringify(allUsers))
 };
 
-//Check the two dropdown buttons and declare the f() that will show us the result in the DOM
-const mostrarData = (e) => {
+// *Check the dropdown buttons and call the f() that will show the result in the DOM
+const mostrarData = () => {
     if (!employmentStatus || !bankEntity) {
         return Swal.fire({
             title: "Datos Faltantes",

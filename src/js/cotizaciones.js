@@ -11,11 +11,12 @@ const formatMoney = (moneda) => {
     const valorDolar = moneda.toFixed(2);
     return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(valorDolar);
 };
+
 const readData = async (url) => {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error("Error en el fetch");
+            throw new Error("Error en el Fetch");
         }
         const data = await response.json();
         return data;
@@ -84,13 +85,8 @@ const valorDolar = async () => {
         console.log(error);
     }
 };
-
 valorDolar();
 
-
-
-
-//TODO 
 const mostrarDolares = async () => {
     try {
         const data = await readData('https://criptoya.com/api/bancostodos');
@@ -110,7 +106,6 @@ const mostrarDolares = async () => {
         console.log(error)
     }
 }
-
 mostrarDolares();
 
 const valorDolarBlue = async () => {
@@ -135,8 +130,6 @@ const valorDolarBlue = async () => {
         `
 }
 valorDolarBlue();
-
-
 
 
 setInterval(() => {
